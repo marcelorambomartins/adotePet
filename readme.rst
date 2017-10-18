@@ -2,7 +2,7 @@
 O que é o projeto Viralate?
 ###################
 
-Sistema de ferenciamento de adoção de cães da ONG Viralate, desenvolvido por Marcelo Martins e Richard Nunes ambos estudantes de Análise e Desenvolvimento de Sistema pelo IFRS Campus Feliz.
+Sistema de Gerenciamento de adoção de cães da ONG Viralate, desenvolvido por Marcelo Martins e Richard Nunes ambos estudantes de Análise e Desenvolvimento de Sistema pelo IFRS Campus Feliz.
 
 
 
@@ -44,45 +44,7 @@ nome, imagem,  idade aproximada, se está vacinado(quais vacinas), se está cast
  - o sistema irá possuir uma listagem de cães cadastrados podendo ser filtrados por: raça, porte, idade e tempo já disponível para adoção.
 
 
+Página do Facebook da ONG VIRALATE `Clique Aqui <https://www.facebook.com/associacaoviralate/>`_
 
-
-
-
-
-
-
-
-
-*******************
-Release Information
-*******************
-
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
-
-**************************
-Changelog and New Features
-**************************
-
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
-
-*******************
-Server Requirements
-*******************
-
-PHP version 5.6 or newer is recommended.
-
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
-
-************
-Installation
-************
-
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
 
 
