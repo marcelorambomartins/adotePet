@@ -22,9 +22,9 @@
 						<li data-target="#meuSlider" data-slide-to="2"></li>
 					</ol>
 					<div class="carousel-inner">
-						<div class="item active"><img src="application/views/images/slide1.jpg" alt="Slide 1"/></div>
-						<div class="item"><img src="application/views/images/slide2.jpg" alt="Slide 2"/></div>
-						<div class="item"><img src="application/views/images/slide3.jpg" alt="Slide 3"/></div>
+						<div class="item active"><img src="images/slide1.jpg" alt="Slide 1"/></div>
+						<div class="item"><img src="images/slide2.jpg" alt="Slide 2"/></div>
+						<div class="item"><img src="images/slide3.jpg" alt="Slide 3"/></div>
 					</div>
 					<a class="left carousel-control" href="#meuSlider" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
 					<a class="right carousel-control" href="#meuSlider" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
