@@ -11,7 +11,7 @@
 	<div id="navbarCollapse" class="collapse navbar-collapse">
 		<ul class="nav navbar-nav">
 			<li><a href="#">Animais para adoção</a></li>
-			<li><a href="application/views/login.php">Login</a></li>
+			<li><a href="index.php/login">Login</a></li>
 		</ul>
 	</div>
 </nav>
