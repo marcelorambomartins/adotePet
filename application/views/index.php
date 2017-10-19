@@ -13,8 +13,7 @@
 				<div class="col-lg-12 text-center">
 					<h1>Viralate</h1>
 				</div>
-			</div>
-			
+			</div>	
 			<section id="sliderhome">
 				<div id="meuSlider" class="carousel slide" data-ride="carousel">
 					<ol class="carousel-indicators">
@@ -32,11 +31,5 @@
 				</div>
 			</section>
 		</div>
-	
-	
-
-	
-	
-	
 	</body>
 </html>
