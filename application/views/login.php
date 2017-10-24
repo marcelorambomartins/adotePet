@@ -1,34 +1,28 @@
 <html>
 	<head>
 		<?php
-			include_once 'head.php';
+		$this->load->view('head');
 		?>
 	</head>
 	<body>
 		<?php
-			include_once 'menu.php';
+			$this->load->view('menu');
 		?>
-		<form class="formulario2" action="php/controller.php" method="GET">
-            <input type="hidden" name="action" value="login"/>
-            <input type="hidden" name="nome" value=""/>
-            <p>
-            <label>Email</label>
-            <input type="email" name="email">
-            </p>
-            <p>
-            <label>Senha</label>
-            <input type="password" name="senha">
-            </p>
-            <input type="submit" value="Logar">
-		</form>
-		<form class="formulario2" action="cadastrar.php">
-			<input type="submit" value="Cadastre-se aqui" />
-		</form>
-	
-	
 
-	
-	
-	
+		<div class="coluna col7 login text-center">
+			<?php
+				echo form_open('login/logar');
+				echo form_label('Email','email');
+				echo '<br>';
+				echo form_input('email', set_value('email'));
+				echo '<br>';				
+				echo form_label('Senha','senha');
+				echo '<br>';				
+				echo form_input('senha', set_value('senha'));
+				echo '<br>';				
+				echo form_submit('enviar', 'Enviar', array('class'=>'botao'));
+				echo form_close();
+			?>
+		</div>
 	</body>
 </html>
