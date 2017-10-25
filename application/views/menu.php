@@ -12,7 +12,6 @@
 		<ul class="nav navbar-nav">
 			<li><a href="#">Animais para adoção</a></li>
 			<li><a href="login">Login</a></li>
-			<li><a href="login\Login2">Login2</a></li>
 		</ul>
 	</div>
 </nav>
