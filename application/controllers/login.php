@@ -18,11 +18,41 @@ public function index()
 		$this->form_validation->set_rules('password','Senha','trim|required');
 		if($this->form_validation->run()==FALSE):
 			$dados['formerror']=validation_errors();
+			$dados['f_validado']=NULL;
 		else:
 			$dados['formerror']=NULL;
+			$dados['f_validado']=TRUE;			
 		endif;
 
-		$this->load->view('login', $dados);
+		if($dados['f_validado']==TRUE):
+			$this->load->model('ModelLogarPessoas', 'pessoas');
+			$pessoa = array(
+				'email' => $this->input->post('email'),
+				'senha' => $this->input->post('password')
+			);
+
+			$dados['status'] = $this->pessoas->index($pessoa);
+			$dados['formerror']=NULL;
+
+
+			if($dados['status']):
+				echo"logado com sucesso";
+			else:
+				echo"Email ou senha incorretos";
+			endif;
+		else:
+			$this->load->view('login', $dados);
+		endif;
+
+
 	}
+
+
+
+
+
 }
 ?>
+
+
+
