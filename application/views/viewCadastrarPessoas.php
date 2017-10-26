@@ -14,7 +14,7 @@
 				echo form_open('cadastrarpessoas');
 				echo form_label('Nome','nome');
 				echo '<br>';
-				echo form_input('email', set_value('email'));
+				echo form_input('nome', set_value('nome'));
 				echo '<br>';
 				echo form_label('Email','email');
 				echo '<br>';

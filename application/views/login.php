@@ -23,9 +23,12 @@
 				echo form_submit('enviar', 'Enviar', array('class'=>'botao'));
 				echo form_close();
 				if($formerror):
-					echo '<p>'.$formerror.'</p>';
-				endif;
+					echo '<div class="alert alert-danger">'.$formerror.'</div>';
+				endif;				
 			?>
+			<p> 
+				Não possui cadastro? <a href="Cadastrarpessoas">Clique aqui</a>
+			</p>			
 		</div>
 	</body>
 </html>
