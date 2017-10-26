@@ -25,13 +25,13 @@ public function index()
 		endif;
 
 		if($dados['f_validado']==TRUE):
-			$this->load->model('ModelLogarPessoas', 'pessoas');
+			$this->load->model('ModelLogarPessoas', 'login');
 			$pessoa = array(
 				'email' => $this->input->post('email'),
 				'senha' => $this->input->post('password')
 			);
 
-			$dados['status'] = $this->pessoas->validaEmail($pessoa);
+			$dados['status'] = $this->login->validaEmail($pessoa);
 			$dados['formerror']=NULL;
 
 

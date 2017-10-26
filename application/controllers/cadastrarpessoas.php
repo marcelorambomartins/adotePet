@@ -24,6 +24,9 @@ class CadastrarPessoas extends CI_Controller {
 			$dados['formerror']=validation_errors();
 			$dados['status']=NULL;
 		else:
+			$this->load->model('ModelLogarPessoas', 'login');
+			$dados['status'] = $this->login->validaEmail($pessoa);
+
 			$this->load->model('ModelCadastrarPessoas','pessoas');
 			$pessoa = array(
 				'nome' => $this->input->post('nome'),
