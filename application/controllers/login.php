@@ -31,7 +31,7 @@ public function index()
 				'senha' => $this->input->post('password')
 			);
 
-			$dados['status'] = $this->pessoas->index($pessoa);
+			$dados['status'] = $this->pessoas->validaEmail($pessoa);
 			$dados['formerror']=NULL;
 
 
