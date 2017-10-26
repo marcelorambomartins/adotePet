@@ -29,11 +29,18 @@
 				if($formerror):
 					echo '<div class="alert alert-danger">'.$formerror.'</div>';
 				endif;
-			?>
 
-			<p> 
+			
+			if($status):
+					echo '<div class="alert alert-success">Parabéns seu cadastro foi realizado com sucesso!<br>Para continuar <a href="login">Clique aqui</a></div>';
+			else:
+					echo '<p> 
 				Já possui cadastro? <a href="login">Clique aqui</a>
-			</p>
+						</p>';
+			endif;
+
+			
+			?>
 		</div>
 	</body>
 </html>
