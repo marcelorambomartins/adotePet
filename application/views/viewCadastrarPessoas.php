@@ -14,7 +14,7 @@
 				echo form_open('cadastrarpessoas');
 				echo form_label('Nome','nome');
 				echo '<br>';
-				echo form_input('email', set_value('email'));
+				echo form_input('nome', set_value('nome'));
 				echo '<br>';
 				echo form_label('Email','email');
 				echo '<br>';
@@ -24,7 +24,7 @@
 				echo '<br>';				
 				echo form_password('password', set_value('password'));
 				echo '<br><br>';				
-				echo form_submit('enviar', 'Enviar', array('class'=>'botao'));
+				echo form_submit('enviar', 'Enviar');
 				echo form_close();
 				if($formerror):
 					echo '<div class="alert alert-danger">'.$formerror.'</div>';
