@@ -9,13 +9,13 @@ class CadastrarPessoas extends CI_Controller {
 	}
 
 
-public function index()
+	public function index()
 	{
 		
 		$this->load->helper('form');
 		$this->load->library(array('form_validation','email'));
 		//validação do formulário
-		$this->form_validation->set_rules('name','Nome','trim|required');
+		$this->form_validation->set_rules('nome','Nome','trim|required');
 		$this->form_validation->set_rules('email','Email','trim|required|valid_email');
 		$this->form_validation->set_rules('password','Senha','trim|required');
 
@@ -23,11 +23,15 @@ public function index()
 		if($this->form_validation->run()==FALSE):
 			$dados['formerror']=validation_errors();
 		else:
+			$this->load->model('ModelCadastrarPessoas','pessoas');
+			$dados['status'] = $this->pessoas->insertPessoa();
 			$dados['formerror']=NULL;
 		endif;
+
 
 		$this->load->view('viewCadastrarPessoas', $dados);
 
 	}
+
 }
 ?>
