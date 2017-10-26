@@ -5,12 +5,7 @@ class ModelCadastrarPessoas extends CI_Model
 {
 	public function insertPessoa()
 	{
-		/*
-
-		codigo de inserção de dados baseado em codeigniter
-
-
-		$query = $this->db->get('produtos');
+		$query = $this->db->insert('pessoa', $data);
 		return $query->result();
 		*/
 		
