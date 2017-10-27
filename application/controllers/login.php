@@ -31,12 +31,17 @@ public function index()
 				'senha' => $this->input->post('password')
 			);
 
-			$dados['status'] = $this->login->validaEmail($pessoa);
+			$dadospessoa = $this->login->validaEmail($pessoa);
+			$_session['idpessoa']=$dadospessoa['id'];
+			$_session['nomepessoa']=$dadospessoa['nome'];
+			$_session['email']=$dadospessoa['email'];
+			$_session['tipo']=$dadospessoa['userType'];
+
 			$dados['formerror']=NULL;
 
-
-			if($dados['status']):
+			if($dadospessoa["id"]):
 				echo"logado com sucesso";
+				$this->load->view('index');
 			else:
 				echo"Email ou senha incorretos";
 			endif;
