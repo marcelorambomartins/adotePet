@@ -8,7 +8,7 @@
 		<?php
 			$this->load->view('menu');
 		?>
-
+			teste02
 		<div class="coluna col7 login text-center">
 			<?php
 				echo form_open('login');
