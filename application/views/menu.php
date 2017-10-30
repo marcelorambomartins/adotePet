@@ -11,7 +11,7 @@
 	</div>
 	<div id="navbarCollapse" class="collapse navbar-collapse">
 		<ul class="nav navbar-nav">
-			<li><a href="home"><span class="glyphicon glyphicon-home"></span></a></li>';
+			<li><a href="home"><span class="glyphicon glyphicon-home"></span></a></li>
 			<li><a href="login"><span class="fa fa-paw"></span> Animais para adoção</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
