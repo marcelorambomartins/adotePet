@@ -24,11 +24,7 @@ class CadastrarPessoas extends CI_Controller {
 			$dados['formerror']=validation_errors();
 			$dados['status']=NULL;
 		else:
-			$this->load->model('ModelLogarPessoas', 'login');
-			$dados['status'] = $this->login->validaEmail($pessoa);
-
-			$this->load->model('ModelCadastrarPessoas','pessoas');
-
+			$dados['formerror']=NULL;
 			$pessoa = array(
 				'nome' => $this->input->post('nome'),
 				'sexo' => 'X',
@@ -39,8 +35,16 @@ class CadastrarPessoas extends CI_Controller {
 				'dataCadastro' => date ("Y-m-d")
 			);
 
-			$dados['status'] = $this->pessoas->insertPessoa($pessoa);
-			$dados['formerror']=NULL;
+			$this->load->model('ModelLogarPessoas', 'login');
+			$dados['status'] = $this->login->validaEmail($pessoa);
+
+			if(!$dados['status']){
+				$this->load->model('ModelCadastrarPessoas','pessoas');
+				$dados['status'] = $this->pessoas->insertPessoa($pessoa);
+				
+			}
+
+			
 		endif;
 
 
