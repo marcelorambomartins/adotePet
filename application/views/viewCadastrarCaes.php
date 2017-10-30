@@ -16,13 +16,34 @@
 				echo '<br>';
 				echo form_input('nome', set_value('nome'));
 				echo '<br>';
-				echo form_label('Idade','idade');
+				echo form_label('Idade (anos)','idade');
 				echo '<br>';
 				echo form_input('idade', set_value('idade'));
-				echo '<br>';				
-				echo form_label('Porte','porte');
-				echo '<br>';				
-				echo form_input('porte', set_value('porte'));
+				echo '<br>';
+
+					$opcoes = array(
+				  '' => 'Selecione',
+                  'pequeno'  => 'Pequeno',
+                  'medio'    => 'Médio',
+                  'grande'   => 'Grande',
+                   );
+
+				echo form_label('Porte (Kg)','porte');
+				echo '<br>';
+				echo form_dropdown('porte', $opcoes, 'selecione');
+				echo '<br><br>';
+				echo '<h3>Caracteristicas</h3>';
+				echo '<br>';
+
+				echo form_checkbox('castrado', 'castrado', false);
+				echo form_label(' Castrado','castrado');
+				echo '<br>';
+				echo form_checkbox('vacinado', 'vacinado', false);
+				echo form_label(' Vacinado','vacinado');
+				echo '<br>';
+				echo form_checkbox('adotado', 'adotado', false);
+				echo form_label(' Adotado','adotado');
+
 				echo '<br><br>';				
 				echo form_submit('enviar', 'Enviar');
 				echo form_close();

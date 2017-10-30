@@ -13,11 +13,12 @@ class Caes extends CI_Controller {
 	public function cadastrar()
 	{
 		$this->load->helper('form');
-		$this->load->library(array('form_validation','email'));
+		$this->load->library(array('form_validation'));
 		//validação do formulário
 		$this->form_validation->set_rules('nome','Nome','trim|required');
-		$this->form_validation->set_rules('email','Email','trim|required|valid_email');
-		$this->form_validation->set_rules('password','Senha','trim|required');
+		$this->form_validation->set_rules('idade','Idade','trim|required|');
+		$this->form_validation->set_rules('porte','Porte','trim|required');
+		$this->form_validation->set_rules('porte','Porte','required');
 
 
 		if($this->form_validation->run()==FALSE):
