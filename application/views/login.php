@@ -24,7 +24,14 @@
 				echo form_close();
 				if($formerror):
 					echo '<div class="alert alert-danger">'.$formerror.'</div>';
-				endif;				
+				endif;
+
+				if(isset($loginfail)){
+					if($loginfail){
+					echo '<div class="alert alert-danger">Email ou Senha Incorretos</div>';
+					}		
+				}
+					
 			?>
 			<p> 
 				Não possui cadastro? <a href="Cadastrarpessoas">Clique aqui</a>
