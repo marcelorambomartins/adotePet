@@ -31,7 +31,7 @@ class CadastrarPessoas extends CI_Controller {
 
 			$pessoa = array(
 				'nome' => $this->input->post('nome'),
-				'sexo' => 'M',
+				'sexo' => 'X',
 				'email' => $this->input->post('email'),
 				'senha' => $this->input->post('password'),
 				'userType' => 1,

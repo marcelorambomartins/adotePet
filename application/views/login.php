@@ -19,8 +19,8 @@
 				echo form_label('Senha','senha');
 				echo '<br>';				
 				echo form_password('password', set_value('password'));
-				echo '<br>';				
-				echo form_submit('enviar', 'Enviar', array('class'=>'botao'));
+				echo '<br><br>';				
+				echo form_submit('enviar', 'Enviar');
 				echo form_close();
 				if($formerror):
 					echo '<div class="alert alert-danger">'.$formerror.'</div>';
