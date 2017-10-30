@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class ModelCadastrarPessoas extends CI_Model
+class ModelCaes extends CI_Model
 {
-	public function insertPessoa($pessoa)
+	public function insertCaes($cao)
 	{
-		$this->db->insert('pessoa', $pessoa);
+		$this->db->insert('cao', $cao);
 		return $this->db->affected_rows(); //retorna quantas linhas foram afetadas
 		
 	}
