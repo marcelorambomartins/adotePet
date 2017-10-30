@@ -6,12 +6,12 @@ class CadastrarPessoas extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->helper('url');
+		date_default_timezone_set('America/Sao_Paulo');
 	}
 
 
 	public function index()
 	{
-		
 		$this->load->helper('form');
 		$this->load->library(array('form_validation','email'));
 		//validação do formulário
@@ -28,6 +28,7 @@ class CadastrarPessoas extends CI_Controller {
 			$dados['status'] = $this->login->validaEmail($pessoa);
 
 			$this->load->model('ModelCadastrarPessoas','pessoas');
+
 			$pessoa = array(
 				'nome' => $this->input->post('nome'),
 				'sexo' => 'M',
@@ -35,7 +36,7 @@ class CadastrarPessoas extends CI_Controller {
 				'senha' => $this->input->post('password'),
 				'userType' => 1,
 				'imagem' => 'imagem',
-				'dataCadastro' => '2017-10-26'
+				'dataCadastro' => date ("Y-m-d")
 			);
 
 			$dados['status'] = $this->pessoas->insertPessoa($pessoa);
