@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class CadastrarPessoas extends CI_Controller {
+class Caes extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
@@ -10,7 +10,7 @@ class CadastrarPessoas extends CI_Controller {
 	}
 
 
-	public function index()
+	public function cadastrar()
 	{
 		$this->load->helper('form');
 		$this->load->library(array('form_validation','email'));
@@ -48,7 +48,7 @@ class CadastrarPessoas extends CI_Controller {
 		endif;
 
 
-		$this->load->view('viewCadastrarPessoas', $dados);
+		$this->load->view('viewCadastrarCaes', $dados);
 
 	}
 
