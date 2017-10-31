@@ -32,19 +32,20 @@ public function index()
 			);
 
 			$dadospessoa = $this->login->validaEmail($pessoa);
-			$_session['idpessoa']=$dadospessoa['id'];
-			$_session['nomepessoa']=$dadospessoa['nome'];
-			$_session['email']=$dadospessoa['email'];
-			$_session['tipo']=$dadospessoa['userType'];
-
-			$dados['formerror']=NULL;
+			$dados['formerror']= NULL;
 
 			if($dadospessoa["id"]):
-				echo"logado com sucesso";
+				$_session['idpessoa']=$dadospessoa['id'];
+				$_session['nomepessoa']=$dadospessoa['nome'];
+				$_session['email']=$dadospessoa['email'];
+				$_session['usertype']=$dadospessoa['userType'];
+
 				$this->load->view('index');
 			else:
-				echo"Email ou senha incorretos";
+				$dados['loginfail'] = true;
+				$this->load->view('login', $dados);
 			endif;
+
 		else:
 			$this->load->view('login', $dados);
 		endif;
