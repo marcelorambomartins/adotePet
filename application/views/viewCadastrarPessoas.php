@@ -11,7 +11,7 @@
 
 		<div class="coluna col7 login text-center">
 			<?php
-				echo form_open('cadastrarpessoas');
+				echo form_open('pessoas/cadastrar');
 				echo form_label('Nome','nome');
 				echo '<br>';
 				echo form_input('nome', set_value('nome'));
@@ -32,10 +32,10 @@
 
 			
 			if($status):
-					echo '<div class="alert alert-success">Parabéns seu cadastro foi realizado com sucesso!<br>Para continuar <a href="login">Clique aqui</a></div>';
+					echo '<div class="alert alert-success">Parabéns seu cadastro foi realizado com sucesso!<br>Para continuar <a href="../login">Clique aqui</a></div>';
 			else:
 					echo '<p> 
-				Já possui cadastro? <a href="login">Clique aqui</a>
+				Já possui cadastro? <a href="../login">Clique aqui</a>
 						</p>';
 			endif;
 
