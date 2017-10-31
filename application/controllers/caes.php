@@ -25,34 +25,51 @@ class Caes extends CI_Controller {
 			$dados['status']=NULL;
 		else:
 
-			echo $this->input->post('castrado');
-			echo $this->input->post('vacinado');
-			$adotado = $this->input->post('adotado');
-			var_dump($adotado);
-
-
-			/*
 			$dados['formerror']=NULL;
+			$dados['status']=NULL;
+
+			
+			if($this->input->post('castrado') == null){
+					$castrado = false;
+			}else{
+					$castrado = true;
+			}
+
+			if($this->input->post('vacinado') == null){
+					$vacinado = false;
+			}else{
+					$vacinado = true;
+			}
+
+			if($this->input->post('adotado') == null){
+					$adotado = false;
+			}else{
+					$adotado = true;
+			}
+			
+			
 			$cao = array(
 				'nome' => $this->input->post('nome'),
 				'idade' => $this->input->post('idade'),
 				'porte' => $this->input->post('porte'),
-				'castrado' => $this->input->post('castrado'),
-				'vacinado' => $this->input->post('vacinado'),
-				'adotado' => $this->input->post('adotado'),
+				'castrado' => $castrado,
+				'vacinado' => $vacinado,
+				'adotado' => $adotado,
 				'imagem' => 'imagem',
 				'dataCadastro' => date ("Y-m-d")
 			);
 
+
+			var_dump($cao);
 			
 			$this->load->model('ModelCaes','caes');
-			$dados['status'] = $this->pessoas->insertCao($cao);
+			$dados['status'] = $this->caes->insertCao($cao);
 
-			*/
+			
 		endif;
 
 
-		$this->load->view('viewCadastrarCaes');
+		$this->load->view('viewCadastrarCaes',$dados);
 
 	}
 

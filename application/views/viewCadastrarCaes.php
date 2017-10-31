@@ -35,10 +35,10 @@
 				echo '<h3>Caracteristicas</h3>';
 				echo '<br>';
 
-				echo form_checkbox('castrado', 'castrado', false);
+				echo form_checkbox('castrado', true, false);
 				echo form_label(' Castrado','castrado');
 				echo '<br>';
-				echo form_checkbox('vacinado', 'vacinado', false);
+				echo form_checkbox('vacinado', true, false);
 				echo form_label(' Vacinado','vacinado');
 				echo '<br>';
 				echo form_checkbox('adotado', true, false);
