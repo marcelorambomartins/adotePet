@@ -35,7 +35,7 @@ class Pessoas extends CI_Controller {
 				'dataCadastro' => date ("Y-m-d")
 			);
 
-			$this->load->model('ModelPessoas/validaEmail', 'login');
+			$this->load->model('ModelPessoas', 'login');
 			$dados['status'] = $this->login->validaEmail($pessoa);
 
 			if(!$dados['status']){

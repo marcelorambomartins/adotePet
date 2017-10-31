@@ -3,6 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class ModelPessoas extends CI_Model
 {
+
+	
 	public function insertPessoa($pessoa)
 	{
 		$this->db->insert('pessoa', $pessoa);
