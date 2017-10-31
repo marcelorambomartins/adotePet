@@ -6,19 +6,12 @@
 		<span class="icon-bar"></span>
 		<span class="icon-bar"></span>
 	</button>
-	<!-- esse aqui abaixo é a home com a foto mas não acho que combinou muito bem com o menu:
-	<a href="#" class="navbar-brand"><img src="images/slide1.jpg" width="30" height="30"></a>-->
 	</div>
 	<div id="navbarCollapse" class="collapse navbar-collapse">
 		<ul class="nav navbar-nav">
-<<<<<<< HEAD
-			<li><a href="home"><span class="glyphicon glyphicon-home"></span></a></li>
-			<li><a href="login"><span class="fa fa-paw"></span> Animais para adoção</a></li>
-=======
 			<li><a href="../home"><span class="glyphicon glyphicon-home"></span></a></li>
 			<li><a href="../login"><span class="fa fa-paw"></span> Animais para adoção</a></li>
 			<li><a href="caes/cadastrar"><span class="fa fa-paw"></span> Cadastrar Caes</a></li>
->>>>>>> 1d4bf2d03d95b23d26ec4fe9283b7570af1d11e9
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<?php
