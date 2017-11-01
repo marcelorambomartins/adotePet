@@ -11,7 +11,7 @@
 
 		<div class="coluna col7 login text-center">
 			<?php
-				echo form_open('login');
+				echo form_open('pessoas/login');
 				echo form_label('Email','email');
 				echo '<br>';
 				echo form_input('email', set_value('email'));
@@ -34,7 +34,7 @@
 					
 			?>
 			<p> 
-				Não possui cadastro? <a href="Cadastrarpessoas">Clique aqui</a>
+				Não possui cadastro? <a href="http://localhost/viralate/pessoas/cadastrar">Clique aqui</a>
 			</p>			
 		</div>
 	</body>

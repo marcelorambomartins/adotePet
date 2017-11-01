@@ -35,13 +35,13 @@
 				echo '<h3>Caracteristicas</h3>';
 				echo '<br>';
 
-				echo form_checkbox('castrado', 'castrado', false);
+				echo form_checkbox('castrado', true, false);
 				echo form_label(' Castrado','castrado');
 				echo '<br>';
-				echo form_checkbox('vacinado', 'vacinado', false);
+				echo form_checkbox('vacinado', true, false);
 				echo form_label(' Vacinado','vacinado');
 				echo '<br>';
-				echo form_checkbox('adotado', 'adotado', false);
+				echo form_checkbox('adotado', true, false);
 				echo form_label(' Adotado','adotado');
 
 				echo '<br><br>';				
@@ -52,11 +52,10 @@
 						echo '<div class="alert alert-danger">'.$formerror.'</div>';
 					endif;
 				}
-				
 
 				if(isset($status)){
 					if($status):
-						echo '<div class="alert alert-success">Parabéns seu cadastro foi realizado com sucesso!<br>Para continuar <a href="login">Clique aqui</a></div>';
+						echo '<div class="alert alert-success">Parabéns seu cadastro foi realizado com sucesso!</div>';
 					endif;
 				}
 			

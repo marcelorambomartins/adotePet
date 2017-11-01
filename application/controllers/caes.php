@@ -16,8 +16,7 @@ class Caes extends CI_Controller {
 		$this->load->library(array('form_validation'));
 		//validação do formulário
 		$this->form_validation->set_rules('nome','Nome','trim|required');
-		$this->form_validation->set_rules('idade','Idade','trim|required|');
-		$this->form_validation->set_rules('porte','Porte','trim|required');
+		$this->form_validation->set_rules('idade','Idade','trim|required');
 		$this->form_validation->set_rules('porte','Porte','required');
 
 
@@ -25,32 +24,57 @@ class Caes extends CI_Controller {
 			$dados['formerror']=validation_errors();
 			$dados['status']=NULL;
 		else:
+
 			$dados['formerror']=NULL;
-			$pessoa = array(
+			$dados['status']=NULL;
+
+			
+			if($this->input->post('castrado') == null){
+					$castrado = false;
+			}else{
+					$castrado = true;
+			}
+
+			if($this->input->post('vacinado') == null){
+					$vacinado = false;
+			}else{
+					$vacinado = true;
+			}
+
+			if($this->input->post('adotado') == null){
+					$adotado = false;
+			}else{
+					$adotado = true;
+			}
+			
+			
+			$cao = array(
 				'nome' => $this->input->post('nome'),
-				'sexo' => 'X',
-				'email' => $this->input->post('email'),
-				'senha' => $this->input->post('password'),
-				'userType' => 1,
+				'idade' => $this->input->post('idade'),
+				'porte' => $this->input->post('porte'),
+				'castrado' => $castrado,
+				'vacinado' => $vacinado,
+				'adotado' => $adotado,
 				'imagem' => 'imagem',
 				'dataCadastro' => date ("Y-m-d")
 			);
 
-			$this->load->model('ModelLogarPessoas', 'login');
-			$dados['status'] = $this->login->validaEmail($pessoa);
-
-			if(!$dados['status']){
-				$this->load->model('ModelCadastrarPessoas','pessoas');
-				$dados['status'] = $this->pessoas->insertPessoa($pessoa);
-				
-			}
+			
+			$this->load->model('ModelCaes','caes');
+			$dados['status'] = $this->caes->insertCao($cao);
 
 			
 		endif;
 
 
-		$this->load->view('viewCadastrarCaes', $dados);
+		$this->load->view('viewCadastrarCaes',$dados);
 
+	}
+
+
+	public function listar()
+	{
+		$this->load->view('listagemcaes');
 	}
 
 }

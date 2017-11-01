@@ -11,7 +11,7 @@
 
 		<div class="coluna col7 login text-center">
 			<?php
-				echo form_open('cadastrarpessoas');
+				echo form_open('pessoas/cadastrar');
 				echo form_label('Nome','nome');
 				echo '<br>';
 				echo form_input('nome', set_value('nome'));
@@ -29,16 +29,14 @@
 				if($formerror):
 					echo '<div class="alert alert-danger">'.$formerror.'</div>';
 				endif;
+			if(isset($status)){
+				if($status == 1){
 
-			
-			if($status):
-					echo '<div class="alert alert-success">Parabéns seu cadastro foi realizado com sucesso!<br>Para continuar <a href="login">Clique aqui</a></div>';
-			else:
-					echo '<p> 
-				Já possui cadastro? <a href="login">Clique aqui</a>
-						</p>';
-			endif;
-
+					echo '<div class="alert alert-success">Parabéns seu cadastro foi realizado com sucesso!<br>Para continuar <a href="http://localhost/viralate/pessoas/login">Clique aqui</a></div>';
+				}elseif($status == 0){
+					echo '<div class="alert alert-danger">E-mail já existente, por favor, escolha outro e-mail.</div>';
+				}
+			}
 			
 			?>
 		</div>
