@@ -52,11 +52,10 @@
 						echo '<div class="alert alert-danger">'.$formerror.'</div>';
 					endif;
 				}
-				
 
 				if(isset($status)){
 					if($status):
-						echo '<div class="alert alert-success">Parabéns seu cadastro foi realizado com sucesso!<br>Para continuar <a href="login">Clique aqui</a></div>';
+						echo '<div class="alert alert-success">Parabéns seu cadastro foi realizado com sucesso!</div>';
 					endif;
 				}
 			

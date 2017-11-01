@@ -59,8 +59,6 @@ class Caes extends CI_Controller {
 				'dataCadastro' => date ("Y-m-d")
 			);
 
-
-			var_dump($cao);
 			
 			$this->load->model('ModelCaes','caes');
 			$dados['status'] = $this->caes->insertCao($cao);
