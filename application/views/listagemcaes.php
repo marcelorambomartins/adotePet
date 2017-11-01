@@ -12,128 +12,32 @@
 
 		<div class="row">
 			<div class="col-sm-12">
-			<div class="panel panel-default">
-			Filtros
+			<div class="panel panel-default text-center">
+				<h3 >Filtros</h3>
 			</div>
 			</div>
 		</div>
 
 		<div class="container-fluid">
-		  
-		  <div class="row">
-		    <div class="col-sm-3">
-		      <div class="panel panel-default">
-		        <div class="panel-heading text-center">
-		          <h1>Casa1</h1>
-		        </div>
-		        <div class="panel-body">
 
-			       		<img src="imagens/woods.jpg" height="100%" width="100%">
-			       		<p>Nome</p>
-			       		<p>Endreço</p>
-		        </div>
-		        <div class="panel-footer text-center">
-		        	<h5>Acessar</h5>
-		        </div>
-		      </div> 
-		    </div>
-		    <div class="col-sm-3">
-		      <div class="panel panel-default">
-		        <div class="panel-heading text-center">
-		          <h1>Casa1</h1>
-		        </div>
-		        <div class="panel-body">
+			<div class="row"><!--inicio da row-->
 
-			       		<img src="imagens/woods.jpg" height="100%" width="100%">
-			       		<p>Nome</p>
-			       		<p>Endreço</p>
-		        </div>
-		        <div class="panel-footer text-center" onclick="alert('Hello')">
-		        	<h5>Acessar</h5>
-		        </div>
-		      </div> 
-		    </div>
-		    <div class="col-sm-3">
-		      <div class="panel panel-default">
-		        <div class="panel-heading text-center">
-		          <h1>Casa1</h1>
-		        </div>
-		        <div class="panel-body">
+			<?php
+				foreach ($listacaes as $cao) {
+					echo "<div class='col-sm-3'><!--inicio do bloco-->";
+					echo "<div class='panel panel-default'>";
+					echo "<div class='panel-body'>";
+						echo "<img src='../images/dogdefault.png' alt='Ver mais fotos' height='100%' width='100%'>";
+						echo "<p>Nome " . $cao['nome'] . "</p>";
+						echo "<p>Porte " . $cao['porte'] . "</p>";
+					echo "</div>";
+					echo "<div class='panel-footer text-center'>";
+						echo "<h5>Adotar</h5>";
+					echo "</div></div></div><!--fim do bloco-->";
+				}
+			?>
 
-			       		<img src="imagens/woods.jpg" height="100%" width="100%">
-			       		<p>Nome</p>
-			       		<p>Endreço</p>
-		        </div>
-		        <div class="panel-footer text-center">
-		        	<h5>Acessar</h5>
-		        </div>
-		      </div> 
-		    </div>
-		    <div class="col-sm-3">
-		      <div class="panel panel-default">
-		        <div class="panel-heading text-center">
-		          <h1>Casa1</h1>
-		        </div>
-		        <div class="panel-body">
-
-			       		<img src="imagens/woods.jpg" height="100%" width="100%">
-			       		<p>Nome</p>
-			       		<p>Endreço</p>
-		        </div>
-		        <div class="panel-footer text-center">
-		        	<h5>Acessar</h5>
-		        </div>
-		      </div> 
-		    </div>
-		    <div class="col-sm-3">
-		      <div class="panel panel-default">
-		        <div class="panel-heading text-center">
-		          <h1>Casa1</h1>
-		        </div>
-		        <div class="panel-body">
-
-			       		<img src="imagens/woods.jpg" height="100%" width="100%">
-			       		<p>Nome</p>
-			       		<p>Endreço</p>
-		        </div>
-		        <div class="panel-footer text-center">
-		        	<h5>Acessar</h5>
-		        </div>
-		      </div> 
-		    </div>
-		    <div class="col-sm-3">
-		      <div class="panel panel-default">
-		        <div class="panel-heading text-center">
-		          <h1>Casa1</h1>
-		        </div>
-		        <div class="panel-body">
-
-			       		<img src="imagens/woods.jpg" height="100%" width="100%">
-			       		<p>Nome</p>
-			       		<p>Endreço</p>
-		        </div>
-		        <div class="panel-footer text-center">
-		        	<h5>Acessar</h5>
-		        </div>
-		      </div> 
-		    </div>
-		   <div class="col-sm-3">
-		      <div class="panel panel-default">
-		        <div class="panel-heading text-center">
-		          <h1>Casa1</h1>
-		        </div>
-		        <div class="panel-body">
-
-			       		<img src="imagens/woods.jpg" height="100%" width="100%">
-			       		<p>Nome</p>
-			       		<p>Endreço</p>
-		        </div>
-		        <div class="panel-footer text-center">
-		        	<h5>Acessar</h5>
-		        </div>
-		      </div> 
-		    </div>
-		  </div> <!--div row-->
+			</div> <!-- fim da div row-->
 
 		</div>
 		

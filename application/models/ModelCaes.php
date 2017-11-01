@@ -9,6 +9,20 @@ class ModelCaes extends CI_Model
 		return $this->db->affected_rows(); //retorna quantas linhas foram afetadas
 		
 	}
+
+
+	public function selectCaes()
+	{
+		$this -> db -> select('id, nome, porte');
+		$this -> db -> from('cao');
+		$query = $this -> db -> get();
+
+		if($query -> num_rows() > 0){
+		    return $query->result_array();
+		}else{
+		    return false;
+		}	
+	}
 	
 	
 	
