@@ -74,7 +74,10 @@ class Caes extends CI_Controller {
 
 	public function listar()
 	{
-		$this->load->view('listagemcaes');
+		$this->load->model('ModelCaes','caes');
+		$dados['listacaes'] = $this->caes->selectCaes();
+
+		$this->load->view('listagemcaes',$dados);
 	}
 
 }
