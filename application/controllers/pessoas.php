@@ -36,12 +36,14 @@ class Pessoas extends CI_Controller {
 			);
 
 			$this->load->model('ModelPessoas', 'login');
-			$dados['status'] = $this->login->validaEmail($pessoa);
-
-			if(!$dados['status']){
+			$dados['validado'] = $this->login->validaEmail($pessoa);
+			//FALSE = encontrou email e não pode validar
+			//TRUE = nao encontrou nenhum email, logo foi validado
+			if($dados['validado'] == TRUE){
 				$this->load->model('ModelPessoas','pessoas');
 				$dados['status'] = $this->pessoas->insertPessoa($pessoa);
-				
+			}else{
+				$dados['status'] = 0;
 			}
 
 			
@@ -71,13 +73,13 @@ class Pessoas extends CI_Controller {
 		endif;
 
 		if($dados['f_validado']==TRUE):
-			$this->load->model('ModelPessoas/validaEmail', 'login');
+			$this->load->model('ModelPessoas', 'login');
 			$pessoa = array(
 				'email' => $this->input->post('email'),
 				'senha' => $this->input->post('password')
 			);
 
-			$dadospessoa = $this->login->validaEmail($pessoa);
+			$dadospessoa = $this->login->autenticaPessoa($pessoa);
 			$dados['formerror']= NULL;
 
 			if($dadospessoa["id"]):
@@ -85,7 +87,6 @@ class Pessoas extends CI_Controller {
 				$_session['nomepessoa']=$dadospessoa['nome'];
 				$_session['email']=$dadospessoa['email'];
 				$_session['usertype']=$dadospessoa['userType'];
-
 				$this->load->view('index');
 			else:
 				$dados['loginfail'] = true;
