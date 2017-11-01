@@ -79,5 +79,18 @@ class Caes extends CI_Controller {
 		$this->load->view('listagemcaes',$dados);
 	}
 
+
+
+	public function visualizar($id){
+		echo "cao de ID: " . $id;
+
+		$this->load->model('ModelCaes','caes');
+		$dados['dadosCao'] = $this->caes->selectCao($id);
+
+		var_dump($dados['dadosCao']);
+
+		$this->load->view('viewPerfilCao');
+	}
+
 }
 ?>
