@@ -11,7 +11,7 @@
 
 		<div class="coluna col7 login text-center">
 			<?php
-				echo form_open('pessoas/login');
+				echo form_open('http://localhost/viralate/pessoas/login');
 				echo form_label('Email','email');
 				echo '<br>';
 				echo form_input('email', set_value('email'));

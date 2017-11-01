@@ -11,7 +11,7 @@
 
 		<div class="coluna col7 login text-center">
 			<?php
-				echo form_open('pessoas/cadastrar');
+				echo form_open('http://localhost/viralate/pessoas/cadastrar');
 				echo form_label('Nome','nome');
 				echo '<br>';
 				echo form_input('nome', set_value('nome'));
