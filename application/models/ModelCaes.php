@@ -16,12 +16,7 @@ class ModelCaes extends CI_Model
 		$this -> db -> select('id, nome, porte');
 		$this -> db -> from('cao');
 		$query = $this -> db -> get();
-
-		if($query -> num_rows() > 0){
-		    return $query->result_array();
-		}else{
-		    return false;
-		}	
+		return $query->result_array();
 	}
 	
 	
