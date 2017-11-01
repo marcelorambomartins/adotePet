@@ -34,7 +34,7 @@
 					
 			?>
 			<p> 
-				Não possui cadastro? <a href="pessoas/cadastrar">Clique aqui</a>
+				Não possui cadastro? <a href="http://localhost/viralate/pessoas/cadastrar">Clique aqui</a>
 			</p>			
 		</div>
 	</body>
