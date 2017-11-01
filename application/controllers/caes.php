@@ -71,5 +71,11 @@ class Caes extends CI_Controller {
 
 	}
 
+
+	public function listar()
+	{
+		$this->load->view('listagemcaes');
+	}
+
 }
 ?>
