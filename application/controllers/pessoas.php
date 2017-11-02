@@ -71,7 +71,6 @@ class Pessoas extends CI_Controller {
 			$dados['formerror']=NULL;
 			$dados['f_validado']=TRUE;			
 		endif;
-
 		if($dados['f_validado']==TRUE):
 			$this->load->model('ModelPessoas', 'login');
 			$pessoa = array(
@@ -81,12 +80,12 @@ class Pessoas extends CI_Controller {
 
 			$dadospessoa = $this->login->autenticaPessoa($pessoa);
 			$dados['formerror']= NULL;
-
 			if($dadospessoa["id"]):
-				$_session['idpessoa']=$dadospessoa['id'];
-				$_session['nomepessoa']=$dadospessoa['nome'];
-				$_session['email']=$dadospessoa['email'];
-				$_session['usertype']=$dadospessoa['userType'];
+				$_SESSION['idpessoa']=$dadospessoa['id'];
+				$_SESSION['nomepessoa']=$dadospessoa['nome'];
+				$_SESSION['email']=$dadospessoa['email'];
+				$_SESSION['usertype']=$dadospessoa['userType'];
+
 				$this->load->view('index');
 			else:
 				$dados['loginfail'] = true;

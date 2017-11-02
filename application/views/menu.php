@@ -15,16 +15,18 @@
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<?php
-			$usertype=0;
-			if($usertype==1):
-      		echo'<li><a href="http://localhost/viralate/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>';
-      		elseif($usertype==2):
-      		echo'<li><a href="http://localhost/viralate/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>';
-      		else:
-			echo'<li><a href="http://localhost/viralate/pessoas/cadastrar"><span class="glyphicon glyphicon-user"></span> Cadastrar</a></li>';
-      		echo'<li><a href="http://localhost/viralate/pessoas/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>';
+			if(isset($_SESSION['nomepessoa'])) {
+				echo'<div class="btn-link">';
+				echo'<button style="text-decoration:none" type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> '.$_SESSION['nomepessoa'].'</button>';
+				echo'<ul class="dropdown-menu" role="menu">';
+				echo'<li><a href="http://localhost/viralate/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>';
+				echo'<li><a href=""><span class="glyphicon glyphicon-list-alt"></span> Editar Cadastro</a></li>';
+				echo'</ul></div>';
+			}else{
+				echo'<li><a href="http://localhost/viralate/pessoas/cadastrar"><span class="glyphicon glyphicon-user"></span> Cadastrar</a></li>';
+      			echo'<li><a href="http://localhost/viralate/pessoas/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>';
+			}
 
-      		endif;
       		?>
 		</ul>
 	</div>
