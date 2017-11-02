@@ -18,6 +18,16 @@ class ModelCaes extends CI_Model
 		$query = $this -> db -> get();
 		return $query->result_array();
 	}
+
+
+	public function selectCao($id)
+	{
+		$this -> db -> select('*');
+		$this -> db -> from('cao');
+		$this -> db -> where('id', $id);
+		$query = $this -> db -> get();
+		return $query->result_array();
+	}
 	
 	
 	
