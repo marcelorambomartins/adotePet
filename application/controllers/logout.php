@@ -8,7 +8,7 @@ class Logout extends CI_Controller {
 	{
 		$this->load->helper('url');
 		session_destroy();
-		redirect('http://localhost/viralate/home', 'refresh');
+		redirect('http://localhost/viralate/home');
 	}	
 	
 	

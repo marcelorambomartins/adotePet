@@ -85,8 +85,7 @@ class Pessoas extends CI_Controller {
 				$_SESSION['nomepessoa']=$dadospessoa['nome'];
 				$_SESSION['email']=$dadospessoa['email'];
 				$_SESSION['usertype']=$dadospessoa['userType'];
-
-				$this->load->view('index');
+				redirect('http://localhost/viralate/caes/listar');
 			else:
 				$dados['loginfail'] = true;
 				$this->load->view('login', $dados);
