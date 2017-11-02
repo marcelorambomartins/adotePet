@@ -10,6 +10,7 @@
 		?>
 
 		<div class="coluna col7 login text-center">
+			<h3>Entrar</h3>			
 			<?php
 				echo form_open('http://localhost/viralate/pessoas/login');
 				echo form_label('Email','email');

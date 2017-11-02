@@ -10,6 +10,7 @@
 		?>
 
 		<div class="coluna col7 login text-center">
+			<h3>Crie sua conta</h3>
 			<?php
 				echo form_open('http://localhost/viralate/pessoas/cadastrar');
 				echo form_label('Nome','nome');

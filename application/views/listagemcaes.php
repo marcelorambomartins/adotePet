@@ -12,8 +12,11 @@
 
 		<div class="row">
 			<div class="col-sm-12">
-			<div class="panel panel-default text-center">
-				<h3 >Filtros</h3>
+			<div class="panel panel-default text-left">
+			<?php
+			echo form_open('http://localhost/viralate/caes/filtrar');
+			echo '<br><br>';
+			?>
 			</div>
 			</div>
 		</div>

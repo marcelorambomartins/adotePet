@@ -79,5 +79,13 @@ class Caes extends CI_Controller {
 		$this->load->view('listagemcaes',$dados);
 	}
 
+	public function filtrar()
+	{
+		$this->load->model('ModelCaes','caes');
+		$dados['listacaes'] = $this->caes->selectCaes();
+		$this->load->view('listagemcaes',$dados);
+	}
+
+
 }
 ?>
