@@ -12,10 +12,19 @@
 
 		<div class="row">
 			<div class="col-sm-12">
-			<div class="panel panel-default text-left">
+			<div class="panel panel-default text-left">			
 			<?php
 			echo form_open('http://localhost/viralate/caes/filtrar');
-			echo '<br><br>';
+
+			echo form_checkbox('castrado', 'sim', false);
+			echo form_label('Castrado', 'castrado')."&nbsp&nbsp&nbsp&nbsp";
+			echo form_checkbox('vacinado', 'sim', false);
+			echo form_label('Vacinado', 'vacinado')."&nbsp&nbsp&nbsp&nbsp";			
+			echo form_checkbox('adotado', 'sim', false);
+			echo form_label('Adotado', 'adotado')."&nbsp&nbsp&nbsp&nbsp";				
+			
+			echo form_submit('filtrar', 'Filtrar').'<span class="glyphicon glyphicon-search">';
+			echo form_close();			
 			?>
 			</div>
 			</div>
