@@ -14,13 +14,27 @@
 			<div class="col-sm-12">
 			<div class="panel panel-default text-left">			
 			<?php
+			if (isset($castrado)){
+				$castrado = TRUE;
+			}else{
+				$castrado = FALSE;
+			}
+			if (isset($vacinado)){
+				$vacinado = TRUE;
+			}else{
+				$vacinado = FALSE;
+			}
+			if (isset($adotado)){
+				$adotado = TRUE;
+			}else{
+				$adotado = FALSE;
+			}
 			echo form_open('http://localhost/viralate/caes/filtrar');
-
-			echo form_checkbox('castrado', 'sim', false);
+			echo form_checkbox('castrado', 'sim', $castrado);
 			echo form_label('Castrado', 'castrado')."&nbsp&nbsp&nbsp&nbsp";
-			echo form_checkbox('vacinado', 'sim', false);
+			echo form_checkbox('vacinado', 'sim', $vacinado);
 			echo form_label('Vacinado', 'vacinado')."&nbsp&nbsp&nbsp&nbsp";			
-			echo form_checkbox('adotado', 'sim', false);
+			echo form_checkbox('adotado', 'sim', $adotado);
 			echo form_label('Adotado', 'adotado')."&nbsp&nbsp&nbsp&nbsp";				
 			
 
