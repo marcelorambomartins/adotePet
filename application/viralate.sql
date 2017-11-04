@@ -16,10 +16,13 @@ id INTEGER AUTO_INCREMENT PRIMARY KEY,
 nome VARCHAR(50) NOT NULL,
 idade INTEGER NOT NULL, 
 porte VARCHAR(50) NOT NULL,
+raca VARCHAR(50) NOT NULL,
+sexo CHAR NOT NULL,
 imagem VARCHAR(100) NOT NULL,
 castrado BOOLEAN NOT NULL,
 vacinado BOOLEAN NOT NULL,
 adotado BOOLEAN NOT NULL,
+descricao VARCHAR(200) NOT NULL,
 dataCadastro DATE NOT NULL);
 
 INSERT INTO pessoa(nome,sexo,email,senha,userType,imagem,dataCadastro)
