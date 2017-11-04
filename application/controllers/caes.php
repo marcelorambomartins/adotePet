@@ -109,7 +109,7 @@ class Caes extends CI_Controller {
 
 		var_dump($dados['dadosCao']);
 
-		$this->load->view('viewPerfilCao');
+		$this->load->view('viewPerfilCao',$dados);
 	}
 
 }

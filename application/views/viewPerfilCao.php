@@ -12,10 +12,22 @@
 
 		<div class="container-fluid text-center">    
   <div class="row content">
-    <div class="col-sm-2 sidenav">
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
+    <div class="col-sm-2 sidenav fixed well">
+    	<div style="height: 200px">
+    	<img src='/../images/dogdefault.png' height='100%' width='100%'/>
+    	</div>
+    	<div class="list-group text-left" >
+    	<?php
+    		foreach ($dadosCao as $cao) 
+    		{
+		 	echo ' <a class="list-group-item" href="#"><i class="fa fa-paw fa-fw" aria-hidden="true"></i>&nbsp; Pastor Alemão</a>';
+		  	echo '<a class="list-group-item" href="#"><i class="fa fa-venus-mars fa-fw" aria-hidden="true"></i>&nbsp; Macho</a>';
+		  	echo '<a class="list-group-item" href="#"><i class="fa fa-expand fa-fw" aria-hidden="true"></i>&nbsp;' . $cao['porte'] . '</a>';
+		  	echo '<a class="list-group-item" href="#"><i class="fa fa-heartbeat fa-fw" aria-hidden="true"></i>&nbsp; Vacinado</a>';
+		  	echo '<a class="list-group-item" href="#"><i class="fa fa-scissors fa-fw" aria-hidden="true"></i>&nbsp; Castrado</a>';
+			}
+		?>
+		</div>
     </div>
     <div class="col-sm-8 text-left"> 
       <h1>Welcome</h1>
