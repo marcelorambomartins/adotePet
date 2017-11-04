@@ -29,6 +29,22 @@ class ModelCaes extends CI_Model
 		return $query->result_array();
 	}
 	
+	public function filtrarCaes($castrado, $vacinado, $adotado)
+	{
+		$this -> db -> select('*');
+		$this -> db -> from('cao');
+		if ($castrado){
+			$this -> db -> where('castrado', 1);
+		}
+		if ($vacinado){
+			$this -> db -> where('vacinado', 1);
+		}
+		if ($adotado){
+			$this -> db -> where('adotado', 1);
+		}
+		$query = $this -> db -> get();
+		return $query->result_array();
+	}	
 	
 	
 	

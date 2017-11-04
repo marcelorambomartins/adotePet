@@ -23,7 +23,10 @@
 			echo form_checkbox('adotado', 'sim', false);
 			echo form_label('Adotado', 'adotado')."&nbsp&nbsp&nbsp&nbsp";				
 			
-			echo form_submit('filtrar', 'Filtrar').'<span class="glyphicon glyphicon-search">';
+
+			echo '<button type="submit"><span class="glyphicon glyphicon-search"></span><span class="submit-text"></span></button>';
+
+
 			echo form_close();			
 			?>
 			</div>

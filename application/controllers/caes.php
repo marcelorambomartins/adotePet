@@ -81,8 +81,21 @@ class Caes extends CI_Controller {
 
 	public function filtrar()
 	{
+		$castrado = NULL;
+		$vacinado = NULL;
+		$adotado = NULL;
+
+		if (isset($_POST['castrado'])){
+			$castrado = TRUE;
+		}
+		if (isset($_POST['vacinado'])){
+			$vacinado = TRUE;
+		}
+		if (isset($_POST['adotado'])){
+			$adotado = TRUE;
+		}
 		$this->load->model('ModelCaes','caes');
-		$dados['listacaes'] = $this->caes->selectCaes();
+		$dados['listacaes'] = $this->caes->filtrarCaes($castrado,$vacinado,$adotado);
 		$this->load->view('listagemcaes',$dados);
 	}
 
