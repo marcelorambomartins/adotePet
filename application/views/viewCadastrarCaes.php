@@ -16,21 +16,36 @@
 				echo '<br>';
 				echo form_input('nome', set_value('nome'));
 				echo '<br>';
+				echo form_label('Raça','raca');
+				echo '<br>';
+				echo form_input('raca', set_value('raca'));
+				echo '<br>';
 				echo form_label('Idade (anos)','idade');
 				echo '<br>';
 				echo form_input('idade', set_value('idade'));
 				echo '<br>';
 
-					$opcoes = array(
+				$opcoesSexo = array(
 				  '' => 'Selecione',
-                  'pequeno'  => 'Pequeno',
-                  'medio'    => 'Médio',
-                  'grande'   => 'Grande',
+                  'Fêmea'  => 'Fêmea',
+                  'Macho'   => 'Macho',
+                   );
+
+				echo form_label('Sexo','sexo');
+				echo '<br>';
+				echo form_dropdown('sexo', $opcoesSexo, 'selecione');
+				echo '<br>';
+
+					$opcoesPorte = array(
+				  '' => 'Selecione',
+                  'Pequeno'  => 'Pequeno',
+                  'Médio'    => 'Médio',
+                  'Grande'   => 'Grande',
                    );
 
 				echo form_label('Porte (Kg)','porte');
 				echo '<br>';
-				echo form_dropdown('porte', $opcoes, 'selecione');
+				echo form_dropdown('porte', $opcoesPorte, 'selecione');
 				echo '<br><br>';
 				echo '<h3>Caracteristicas</h3>';
 				echo '<br>';
@@ -43,8 +58,21 @@
 				echo '<br>';
 				echo form_checkbox('adotado', true, false);
 				echo form_label(' Adotado','adotado');
+				echo '<br><br>';
 
-				echo '<br><br>';				
+				 $data = array(
+        			'name'        => 'descricao',
+			        'value'       => set_value('descricao'),
+			        'rows'        => '10',
+			        'cols'        => '50',
+  				 );
+
+				echo form_label(' Escreva algo sobre ele','descricao');
+				echo '<br>';
+    			echo form_textarea($data);		
+				echo '<br><br>';
+								
+
 				echo form_submit('enviar', 'Enviar');
 				echo form_close();
 				if(isset($formerror)){

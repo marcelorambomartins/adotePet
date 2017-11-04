@@ -18,6 +18,9 @@ class Caes extends CI_Controller {
 		$this->form_validation->set_rules('nome','Nome','trim|required');
 		$this->form_validation->set_rules('idade','Idade','trim|required');
 		$this->form_validation->set_rules('porte','Porte','required');
+		$this->form_validation->set_rules('raca','Raça','required');
+		$this->form_validation->set_rules('sexo','Sexo','required');
+		$this->form_validation->set_rules('descricao','descrição','required');
 
 
 		if($this->form_validation->run()==FALSE):
@@ -52,10 +55,13 @@ class Caes extends CI_Controller {
 				'nome' => $this->input->post('nome'),
 				'idade' => $this->input->post('idade'),
 				'porte' => $this->input->post('porte'),
+				'raca' => $this->input->post('raca'),
+				'sexo' => $this->input->post('sexo'),
 				'castrado' => $castrado,
 				'vacinado' => $vacinado,
 				'adotado' => $adotado,
 				'imagem' => 'imagem',
+				'descricao' => $this->input->post('descricao'),
 				'dataCadastro' => date ("Y-m-d")
 			);
 
