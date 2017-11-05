@@ -56,6 +56,43 @@ class Pessoas extends CI_Controller {
 
 
 
+	public function alterar()
+	{
+
+		$this->load->helper('form');
+		$this->load->library(array('form_validation','email'));
+		$this->form_validation->set_rules('nome','Nome','trim|required');
+		$this->form_validation->set_rules('password','Senha','trim|required');		
+
+
+		if($this->form_validation->run()==FALSE):
+			$dados['formerror']=validation_errors();
+			$dados['status']=NULL;
+		else:
+			$dados['formerror']=NULL;
+			$data = array(
+		        'nome' => $this->input->post('nome'),
+		        'senha' => $this->input->post('password')
+			);
+			$id = $_SESSION['idpessoa'];
+			$this->load->model('ModelPessoas', 'altera');
+			$dados['validado'] = $this->altera->alteraPessoa($id, $data);
+			if($dados['validado'] == TRUE){
+				$dados['status'] = TRUE;
+				$_SESSION['nomepessoa'] = $this->input->post('nome');
+			}else{
+				$dados['status'] = FALSE;
+			}
+
+			
+		endif;
+
+
+		$this->load->view('viewAlterarPessoas', $dados);
+
+	}
+
+
 
 	public function login()
 	{

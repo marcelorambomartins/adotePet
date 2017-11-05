@@ -12,6 +12,13 @@ class ModelPessoas extends CI_Model
 		
 	}
 	
+	public function alteraPessoa($id, $data)
+	{
+		$this->db->where('id', $id);
+		$this->db->update('pessoa', $data);
+		return $this->db->affected_rows(); //retorna quantas linhas foram afetadas
+		
+	}	
 	
 	public function autenticaPessoa($pessoa){
 		$this -> db -> select('id, email, senha, nome, userType');

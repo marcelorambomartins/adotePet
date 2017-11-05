@@ -20,7 +20,7 @@
 				echo'<button style="text-decoration:none" type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> '.$_SESSION['nomepessoa'].'</button>';
 				echo'<ul class="dropdown-menu" role="menu">';
 				echo'<li><a href="http://localhost/viralate/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>';
-				echo'<li><a href=""><span class="glyphicon glyphicon-list-alt"></span> Editar Cadastro</a></li>';
+				echo'<li><a href="http://localhost/viralate/pessoas/alterar"><span class="glyphicon glyphicon-list-alt"></span> Editar Cadastro</a></li>';
 				echo'</ul></div>';
 			}else{
 				echo'<li><a href="http://localhost/viralate/pessoas/cadastrar"><span class="glyphicon glyphicon-user"></span> Cadastrar</a></li>';
