@@ -60,7 +60,13 @@
           }
 
           if(isset($_SESSION['logado'])) {
-            echo '<br><br><a class="btn btn-primary" href="#" style="width:100%"><i class="fa fa-pencil fa-fw"></i> Editar</a>';
+            echo '<br><br><button class="btn btn-primary" href="#" style="width:100%"><i class="fa fa-pencil fa-fw"></i> Editar</button>';
+          }
+
+           if(isset($_SESSION['logado'])) {
+              if($_SESSION['usertype'] == 1){
+                echo '<br><br><button class="btn btn-danger" href="#" style="width:100%"><i class="fa fa-trash fa-fw"></i> Excluir</button>';
+              }
           }
 		  
 		  	

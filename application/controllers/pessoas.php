@@ -30,7 +30,7 @@ class Pessoas extends CI_Controller {
 				'sexo' => 'X',
 				'email' => $this->input->post('email'),
 				'senha' => $this->input->post('password'),
-				'userType' => 1,
+				'userType' => 3,
 				'imagem' => 'imagem',
 				'dataCadastro' => date ("Y-m-d")
 			);
