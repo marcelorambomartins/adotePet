@@ -11,11 +11,18 @@
 		<ul class="nav navbar-nav">
 			<li><a href="http://localhost/viralate/home"><span class="glyphicon glyphicon-home"></span></a></li>
 			<li><a href="http://localhost/viralate/caes/listar"><span class="fa fa-paw"></span> Animais para adoção</a></li>
-			<li><a href="http://localhost/viralate/caes/cadastrar"><span class="fa fa-paw"></span> Cadastrar Caes</a></li>
+				<?php
+					if(isset($_SESSION['logado'])){
+						if($_SESSION['usertype'] == 1 or $_SESSION['usertype'] == 2){
+							echo '<li><a href="http://localhost/viralate/caes/cadastrar"><span class="fa fa-paw"></span> Cadastrar Caes</a></li>';
+						}
+					}
+				?>
+			
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<?php
-			if(isset($_SESSION['nomepessoa'])) {
+			if(isset($_SESSION['logado'])) {
 				echo'<div class="btn-link">';
 				echo'<button style="text-decoration:none" type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> '.$_SESSION['nomepessoa'].'</button>';
 				echo'<ul class="dropdown-menu" role="menu">';
