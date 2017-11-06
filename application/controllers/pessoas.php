@@ -118,6 +118,7 @@ class Pessoas extends CI_Controller {
 			$dadospessoa = $this->login->autenticaPessoa($pessoa);
 			$dados['formerror']= NULL;
 			if($dadospessoa["id"]):
+				$_SESSION['logado']=true;
 				$_SESSION['idpessoa']=$dadospessoa['id'];
 				$_SESSION['nomepessoa']=$dadospessoa['nome'];
 				$_SESSION['email']=$dadospessoa['email'];
