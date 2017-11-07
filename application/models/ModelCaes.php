@@ -13,7 +13,7 @@ class ModelCaes extends CI_Model
 
 	public function selectCaes()
 	{
-		$this -> db -> select('id, nome, porte');
+		$this -> db -> select('*');
 		$this -> db -> from('cao');
 		$query = $this -> db -> get();
 		return $query->result_array();

@@ -20,61 +20,74 @@ class Caes extends CI_Controller {
 		$this->form_validation->set_rules('porte','Porte','required');
 		$this->form_validation->set_rules('raca','Raça','required');
 		$this->form_validation->set_rules('sexo','Sexo','required');
-		$this->form_validation->set_rules('descricao','descrição','required');
+		$this->form_validation->set_rules('descricao','Descrição','required');
 
 
 		if($this->form_validation->run()==FALSE):
 			$dados['formerror']=validation_errors();
 			$dados['status']=NULL;
 		else:
-
-			$dados['formerror']=NULL;
 			$dados['status']=NULL;
-
-			
-			if($this->input->post('castrado') == null){
-					$castrado = false;
-			}else{
-					$castrado = true;
+			$type = $_FILES['imagem']['type'];
+			$tipo = $type;
+			$tipo = str_replace("image/","",$tipo);
+			if($tipo == 'jpeg'){
+				$tipo = 'jpg';
 			}
-
-			if($this->input->post('vacinado') == null){
-					$vacinado = false;
-			}else{
-					$vacinado = true;
-			}
-
-			if($this->input->post('adotado') == null){
-					$adotado = false;
-			}else{
-					$adotado = true;
-			}
-			
-			
-			$cao = array(
-				'nome' => $this->input->post('nome'),
-				'idade' => $this->input->post('idade'),
-				'porte' => $this->input->post('porte'),
-				'raca' => $this->input->post('raca'),
-				'sexo' => $this->input->post('sexo'),
-				'castrado' => $castrado,
-				'vacinado' => $vacinado,
-				'adotado' => $adotado,
-				'imagem' => 'imagem',
-				'descricao' => $this->input->post('descricao'),
-				'dataCadastro' => date ("Y-m-d")
+			$tempo = time();
+			$name = $tempo.'.'.$tipo;
+			$configuracao = array(
+				'upload_path'   => './images/',
+				'allowed_types' => 'jpg|png',
+				'file_name'     => $tempo,
+				'max_size'      => '5000'
 			);
+            $this->load->library('upload');	
+            $this->upload->initialize($configuracao);		
 
-			
-			$this->load->model('ModelCaes','caes');
-			$dados['status'] = $this->caes->insertCao($cao);
-
-			
+            if ( ! $this->upload->do_upload('imagem'))
+            {
+				echo 'erro no upload da foto';
+            }
+            else
+            {
+            	$data = array('upload_data' => $this->upload->data());
+				$dados['formerror']=NULL;
+				$dados['status']=NULL;
+				
+				if($this->input->post('castrado') == null){
+						$castrado = false;
+				}else{
+						$castrado = true;
+				}
+				if($this->input->post('vacinado') == null){
+						$vacinado = false;
+				}else{
+						$vacinado = true;
+				}
+				if($this->input->post('adotado') == null){
+						$adotado = false;
+				}else{
+						$adotado = true;
+				}
+				$cao = array(
+					'nome' => $this->input->post('nome'),
+					'idade' => $this->input->post('idade'),
+					'porte' => $this->input->post('porte'),
+					'raca' => $this->input->post('raca'),
+					'sexo' => $this->input->post('sexo'),
+					'castrado' => $castrado,
+					'vacinado' => $vacinado,
+					'adotado' => $adotado,
+					'imagem' => $name,
+					'descricao' => $this->input->post('descricao'),
+					'dataCadastro' => date ("Y-m-d")
+				);
+				$this->load->model('ModelCaes','caes');
+				$dados['status'] = $this->caes->insertCao($cao);
+			}		
 		endif;
-
-
 		$this->load->view('viewCadastrarCaes',$dados);
-
 	}
 
 

@@ -37,7 +37,11 @@
   <div class="row content">
     <div class="col-sm-2 sidenav fixed well">
     	<div style="height: 200px">
-    	<img src='dogdefault.png' height='100%' width='100%'/>
+    	<?php 
+        foreach ($dadosCao as $cao){
+        echo "<img src='http://localhost/viralate/images/".$cao['imagem']."' height='100%' width='100%'>";
+        }
+      ?>
     	</div>
     	<div class="list-group text-left" >
     	<?php

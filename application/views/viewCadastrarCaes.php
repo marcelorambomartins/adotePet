@@ -11,7 +11,7 @@
 
 		<div class="coluna col7 login text-center">
 			<?php
-				echo form_open('http://localhost/viralate/caes/cadastrar');
+			echo form_open_multipart('http://localhost/viralate/caes/cadastrar');
 				echo form_label('Nome','nome');
 				echo '<br>';
 				echo form_input('nome', set_value('nome'));
@@ -59,6 +59,9 @@
 				echo form_checkbox('adotado', true, false);
 				echo form_label(' Adotado','adotado');
 				echo '<br><br>';
+				echo form_label('Imagem','imagem');
+				echo '<center><input type="file" name="imagem" size="1000" accept="image/*"/></center>';
+				echo '<br><br>';
 
 				 $data = array(
         			'name'        => 'descricao',
@@ -83,7 +86,7 @@
 
 				if(isset($status)){
 					if($status):
-						echo '<div class="alert alert-success">Parabéns seu cadastro foi realizado com sucesso!</div>';
+						echo '<div class="alert alert-success">Parabéns o cadastro foi realizado com sucesso!</div>';
 					endif;
 				}
 			
