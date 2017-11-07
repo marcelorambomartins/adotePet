@@ -9,34 +9,46 @@
 			$this->load->view('menu');
 		?>
 
-		<div class="coluna col7 login text-center">
-			<h3>Entrar</h3>			
+		<div class="row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+			<h3 class="text-center">Entrar</h3>			
 			<?php
 				echo form_open('http://localhost/viralate/pessoas/login');
 				echo form_label('Email','email');
-				echo '<br>';
-				echo form_input('email', set_value('email'));
-				echo '<br>';				
+				$inputEmail = array(
+					'name' => 'email',
+					'class' => 'form-control',
+				);
+				echo form_input($inputEmail);
+					
+
 				echo form_label('Senha','senha');
-				echo '<br>';				
-				echo form_password('password', set_value('password'));
-				echo '<br><br>';				
-				echo form_submit('enviar', 'Enviar');
+				$inputSenha = array(
+					'name' => 'password',
+					'class' => 'form-control',
+				);			
+				echo form_password($inputSenha);
+
+				echo '<br><br>';
+				echo '<button class="btn btn-success" type="submit">Enviar</button>';
 				echo form_close();
 				if($formerror):
-					echo '<div class="alert alert-danger">'.$formerror.'</div>';
+					echo '<div class="alert alert-danger text-center">'.$formerror.'</div>';
 				endif;
 
 				if(isset($loginfail)){
 					if($loginfail){
-					echo '<div class="alert alert-danger">Email ou Senha Incorretos</div>';
+					echo '<div class="alert alert-danger text-center">Email ou Senha Incorretos</div>';
 					}		
 				}
 					
 			?>
-			<p> 
+			<p class="text-center"> 
 				Não possui cadastro? <a href="http://localhost/viralate/pessoas/cadastrar">Clique aqui</a>
-			</p>			
+			</p>
+			</div>
+			<div class="col-sm-4"></div>			
 		</div>
 	</body>
 </html>
