@@ -12,6 +12,8 @@ class Caes extends CI_Controller {
 
 	public function cadastrar()
 	{
+		if(!$_SESSION['idpessoa']){redirect('http://localhost/viralate/pessoas/login');}
+			
 		$this->load->helper('form');
 		$this->load->library(array('form_validation'));
 		//validação do formulário
@@ -124,7 +126,8 @@ class Caes extends CI_Controller {
 
 
 	public function visualizar($id){
-
+		if(!$_SESSION['idpessoa']){redirect('http://localhost/viralate/pessoas/login');}
+		
 		$this->load->model('ModelCaes','caes');
 		$dados['dadosCao'] = $this->caes->selectCao($id);
 

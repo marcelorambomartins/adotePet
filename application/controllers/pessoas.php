@@ -58,7 +58,8 @@ class Pessoas extends CI_Controller {
 
 	public function alterar()
 	{
-
+		if(!$_SESSION['idpessoa']){redirect('http://localhost/viralate/pessoas/login');}
+			
 		$this->load->helper('form');
 		$this->load->library(array('form_validation','email'));
 		$this->form_validation->set_rules('nome','Nome','trim|required');

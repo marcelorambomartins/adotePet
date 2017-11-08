@@ -8,7 +8,6 @@
 		<?php
 			$this->load->view('menu');
 		?>
-
 		<div class="coluna col7 login text-center">
 			<?php
 			echo form_open_multipart('http://localhost/viralate/caes/cadastrar');
