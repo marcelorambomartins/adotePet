@@ -8,38 +8,61 @@
 		<?php
 			$this->load->view('menu');
 		?>
-
-		<div class="coluna col7 login text-center">
-			<h3>Crie sua conta</h3>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+			<h3 class="text-center">Crie sua conta</h3>
 			<?php
 				echo form_open('http://localhost/viralate/pessoas/cadastrar');
 				echo form_label('Nome','nome');
+				$inputNome = array(
+					'name' => 'nome',
+					'class' =>'form-control',
+				);
+				echo form_input($inputNome);
 				echo '<br>';
-				echo form_input('nome', set_value('nome'));
-				echo '<br>';
+
 				echo form_label('Email','email');
-				echo '<br>';
-				echo form_input('email', set_value('email'));
-				echo '<br>';				
+				$inputEmail = array(
+					'name' => 'email',
+					'class' => 'form-control',
+				);
+				echo form_input($inputEmail);
+				echo '<br>';	
+
 				echo form_label('Senha','senha');
-				echo '<br>';				
-				echo form_password('password', set_value('password'));
-				echo '<br><br>';				
-				echo form_submit('enviar', 'Enviar');
+				$inputSenha = array(
+					'name' => 'password',
+					'class' => 'form-control',
+				);			
+				echo form_password($inputSenha);
+
+				echo '<br><br>';
+				echo '<button class="btn btn-success" type="submit">Enviar</button>';
 				echo form_close();
+
+			?>
+			</div>
+			<div class="col-sm-4"></div>
+		</div>
+
+		<div class="row text-center">
+			<?php
+
 				if($formerror):
 					echo '<div class="alert alert-danger">'.$formerror.'</div>';
 				endif;
-			if(isset($status)){
-				if($status == 1){
 
-					echo '<div class="alert alert-success">Parabéns seu cadastro foi realizado com sucesso!<br>Para continuar <a href="http://localhost/viralate/pessoas/login">Clique aqui</a></div>';
-				}elseif($status == 0){
-					echo '<div class="alert alert-danger">E-mail já existente, por favor, escolha outro e-mail.</div>';
+				if(isset($status)){
+					if($status == 1){
+						echo '<div class="alert alert-success">Parabéns seu cadastro foi realizado com sucesso!<br>Para continuar <a href="http://localhost/viralate/pessoas/login">Clique aqui</a></div>';
+					}elseif($status == 0){
+						echo '<div class="alert alert-danger">E-mail já existente, por favor, escolha outro e-mail.</div>';
+					}
 				}
-			}
-			
 			?>
 		</div>
+	</div>
 	</body>
 </html>
