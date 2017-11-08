@@ -47,17 +47,17 @@
     	<?php
     		foreach ($dadosCao as $cao) 
     		{
-		 	  echo '<a class="list-group-item" href="#"><i class="fa fa-paw fa-fw" aria-hidden="true"></i>&nbsp;' . $cao['raca'] . '</a>';
-		  	echo '<a class="list-group-item" href="#"><i class="fa fa-venus-mars fa-fw" aria-hidden="true"></i>&nbsp;' . $cao['sexo'] . '</a>';
-		  	echo '<a class="list-group-item" href="#"><i class="fa fa-expand fa-fw" aria-hidden="true"></i>&nbsp;' . $cao['porte'] . '</a>';
+		 	  echo '<a class="list-group-item"><i class="fa fa-paw fa-fw" aria-hidden="true"></i>&nbsp;' . $cao['raca'] . '</a>';
+		  	echo '<a class="list-group-item"><i class="fa fa-venus-mars fa-fw" aria-hidden="true"></i>&nbsp;' . $cao['sexo'] . '</a>';
+		  	echo '<a class="list-group-item"><i class="fa fa-expand fa-fw" aria-hidden="true"></i>&nbsp;' . $cao['porte'] . '</a>';
           if($cao['vacinado']){
-              echo '<a class="list-group-item" href="#"><i class="fa fa-heartbeat fa-fw" aria-hidden="true"></i>&nbsp;Vacinado</a>';
+              echo '<a class="list-group-item"><i class="fa fa-heartbeat fa-fw" aria-hidden="true"></i>&nbsp;Vacinado</a>';
           }
           if($cao['castrado']){
-            echo '<a class="list-group-item" href="#"><i class="fa fa-scissors fa-fw" aria-hidden="true"></i>&nbsp;Castrado</a>';
+            echo '<a class="list-group-item"><i class="fa fa-scissors fa-fw" aria-hidden="true"></i>&nbsp;Castrado</a>';
           }
           if($cao['adotado']){
-             echo '<a class="list-group-item" href="#"><i class="fa fa-heart fa-fw" aria-hidden="true"></i>&nbsp;Adotado</a>';
+             echo '<a class="list-group-item"><i class="fa fa-heart fa-fw" aria-hidden="true"></i>&nbsp;Adotado</a>';
           }else{
 
             echo '<br><button id="btnAdotar" class="btn btn-success" href="#" style="width:100%" onclick="adotar(' . isset($_SESSION['logado']) . ')"><i class="fa fa-heart fa-fw"></i> Adotar</button>';
