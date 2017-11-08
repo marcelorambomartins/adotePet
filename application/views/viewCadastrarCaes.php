@@ -38,7 +38,7 @@
 					'class' => 'form-control'
 				);
 				echo form_input($inputNome);
-
+				echo '<br>';
 
 				echo form_label('Raça','raca');
 				$inputRaca = array(
@@ -46,7 +46,7 @@
   						'class' => 'form-control'
 				);
 				echo form_input($inputRaca);
-
+				echo '<br>';
 
 				
 				echo form_label('Idade (anos)','idade');
@@ -56,7 +56,7 @@
   						'type' => 'number'
 				);
 				echo form_input($inputIdade);
-
+				echo '<br>';
 
 				$opcoesSexo = array(
 				  '' => 'Selecione',

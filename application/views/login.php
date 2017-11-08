@@ -21,7 +21,7 @@
 					'class' => 'form-control',
 				);
 				echo form_input($inputEmail);
-					
+				echo '<br>';	
 
 				echo form_label('Senha','senha');
 				$inputSenha = array(
