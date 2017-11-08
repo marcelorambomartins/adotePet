@@ -76,7 +76,7 @@
                   'Grande'   => 'Grande',
                    );
 
-				echo form_label('Porte (Kg)','porte');
+				echo form_label('Porte','porte');
 				echo '<br>';
 				echo form_dropdown('porte', $opcoesPorte, 'selecione','class="form-control"');
 				echo "<br>";
