@@ -35,7 +35,7 @@
 
 		<div class="container-fluid text-center">    
   <div class="row content">
-    <div class="col-sm-2 sidenav fixed well">
+    <div class="col-sm-3 sidenav fixed well">
     	<div style="height: 200px">
     	<?php 
         foreach ($dadosCao as $cao){
@@ -78,7 +78,7 @@
 		?>
 		</div>
     </div>
-    <div class="col-sm-8 text-left"> 
+    <div class="col-sm-9 text-left"> 
       <?php
         foreach ($dadosCao as $cao) 
         {
@@ -90,24 +90,12 @@
       <h3>Mais Fotos</h3>
       <p>fotos...</p>
     </div>
-    <div class="col-sm-2 sidenav">
-      <div class="well">
-        <p>ADS</p>
-      </div>
-      <div class="well">
-        <p>ADS</p>
-      </div>
-    </div>
   </div>
 </div>
 
 
 		
 	</div>
-
-	<footer class="container-fluid text-center">
-  <p>Footer Text</p>
-</footer>
 
 	</body>
 </html>
