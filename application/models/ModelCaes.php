@@ -44,10 +44,16 @@ class ModelCaes extends CI_Model
 		}
 		$query = $this -> db -> get();
 		return $query->result_array();
-	}	
-	
-	
-	
-	
+	}
+
+
+	public function nextCaoID()
+	{
+		$next = $this->db->query("SHOW TABLE STATUS LIKE 'cao'");
+		$next = $next->row(0);
+		return $next->Auto_increment;
+
+	}
+
 }
 ?>

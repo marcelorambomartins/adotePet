@@ -34,10 +34,16 @@ class Caes extends CI_Controller {
 			if($tipo == 'jpeg'){
 				$tipo = 'jpg';
 			}
+
+			$this->load->model('ModelCaes','caes');
+			$next_id = $this->caes->nextCaoID();
+
+			mkdir('./images/dogs/' .  $next_id);
+
 			$tempo = time();
 			$name = $tempo.'.'.$tipo;
 			$configuracao = array(
-				'upload_path'   => './images/',
+				'upload_path'   => './images/dogs/' . $next_id,
 				'allowed_types' => 'jpg|png',
 				'file_name'     => $tempo,
 				'max_size'      => '5000'
@@ -47,7 +53,7 @@ class Caes extends CI_Controller {
 
             if ( ! $this->upload->do_upload('imagem'))
             {
-				echo 'erro no upload da foto';
+				 $dados['formerror'] = 'Erro no upload da imagem';
             }
             else
             {

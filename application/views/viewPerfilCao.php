@@ -39,7 +39,7 @@
     	<div style="height: 200px">
     	<?php 
         foreach ($dadosCao as $cao){
-        echo "<img src='http://localhost/viralate/images/".$cao['imagem']."' height='100%' width='100%'>";
+        echo "<img src='http://localhost/viralate/images/dogs/" . $cao['id'] . "/" . $cao['imagem']."' height='100%' width='100%'>";
         }
       ?>
     	</div>

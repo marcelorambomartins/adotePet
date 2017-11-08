@@ -72,7 +72,7 @@
 					echo "<div class='col-sm-3'><!--inicio do bloco-->";
 					echo "<div class='panel panel-default'>";
 					echo "<div class='panel-body'>";
-						echo "<a href='http://localhost/viralate/caes/visualizar/" . $cao['id'] . "'><img src='http://localhost/viralate/images/".$cao['imagem']."' alt='Ver mais fotos' height='100%' width='100%'></a>";
+						echo "<a href='http://localhost/viralate/caes/visualizar/" . $cao['id'] . "'><img src='http://localhost/viralate/images/dogs/" . $cao['id'] . "/". $cao['imagem']."' alt='Ver mais fotos' height='100%' width='100%'></a>";
 						echo "<p>Nome " . $cao['nome'] . "</p>";
 						echo "<p>Porte " . $cao['porte'] . "</p>";
 					echo "</div>";
