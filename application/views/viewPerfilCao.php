@@ -64,7 +64,9 @@
           }
 
           if(isset($_SESSION['logado'])) {
-            echo '<br><br><button class="btn btn-primary" href="#" style="width:100%"><i class="fa fa-pencil fa-fw"></i> Editar</button>';
+            if($_SESSION['usertype'] == 1 or $_SESSION['usertype'] == 2){
+              echo '<br><br><button class="btn btn-primary" href="#" style="width:100%"><i class="fa fa-pencil fa-fw"></i> Editar</button>';
+            }
           }
 
            if(isset($_SESSION['logado'])) {
