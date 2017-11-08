@@ -79,9 +79,33 @@
 				echo form_label('Porte (Kg)','porte');
 				echo '<br>';
 				echo form_dropdown('porte', $opcoesPorte, 'selecione','class="form-control"');
-				echo "<br><hr>";
+				echo "<br>";
 
-				echo '<h4 class="text-center">Caracteristicas</h4>';
+				$data = array(
+        			'name'        => 'descricao',
+        			'class'       => 'form-control',
+			        'value'       => set_value('descricao'),
+			        'rows'        => '5',
+			        'cols'        => '30',
+  				 );
+
+				echo form_label(' Escreva algo sobre ele','descricao');
+				echo '<br>';
+    			echo form_textarea($data);		
+				echo '<br><br>';
+
+				
+				echo "</div>";
+				echo "<div class='col-sm-2'></div>";
+				echo "<div class='col-sm-4'>";
+				
+
+
+				echo form_label('Imagem','imagem');
+				echo '<input class="form-control-file" type="file" name="imagem" size="1000" accept="image/*"/>';
+				echo '<hr><br><br>';
+
+				 echo '<h4 class="text-center">Caracteristicas</h4>';
 				$checkboxCastrado = array(
     				'name'        => 'castrado',
     				'value'       => TRUE,
@@ -112,30 +136,6 @@
     			);
 				echo form_checkbox($checkboxAdotado);
 				echo form_label(' Adotado','adotado');
-				echo '<br><br>';
-				
-				
-				echo "</div>";
-				echo "<div class='col-sm-2'></div>";
-				echo "<div class='col-sm-4'>";
-				
-
-
-				echo form_label('Imagem','imagem');
-				echo '<input class="form-control-file" type="file" name="imagem" size="1000" accept="image/*"/>';
-				echo '<hr><br><br>';
-
-				 $data = array(
-        			'name'        => 'descricao',
-        			'class'       => 'form-control',
-			        'value'       => set_value('descricao'),
-			        'rows'        => '10',
-			        'cols'        => '30',
-  				 );
-
-				echo form_label(' Escreva algo sobre ele','descricao');
-				echo '<br>';
-    			echo form_textarea($data);		
 				echo '<br><br>';
 								
 
