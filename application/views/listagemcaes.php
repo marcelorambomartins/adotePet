@@ -32,11 +32,11 @@
 
 						$atributos = array('id' => 'filtros');
 						echo form_open('http://localhost/viralate/caes/filtrar',$atributos);
-						echo form_checkbox('castrado', 'sim', $castrado);
+						echo form_checkbox('castrado', 'sim', $castrado, 'style=zoom:2');
 						echo form_label('Castrado', 'castrado')."&nbsp&nbsp&nbsp&nbsp";
-						echo form_checkbox('vacinado', 'sim', $vacinado);
+						echo form_checkbox('vacinado', 'sim', $vacinado, 'style=zoom:2');
 						echo form_label('Vacinado', 'vacinado')."&nbsp&nbsp&nbsp&nbsp";			
-						echo form_checkbox('adotado', 'sim', $adotado);
+						echo form_checkbox('adotado', 'sim', $adotado, 'style=zoom:2');
 						echo form_label('Adotado', 'adotado')."&nbsp&nbsp&nbsp&nbsp";				
 						
 
