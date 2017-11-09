@@ -61,6 +61,20 @@ class ModelPessoas extends CI_Model
 		}
 		else{
 		    return false;
+		}
+	}
+
+
+	public function selectAllPessoas(){
+		$this -> db -> select('*');
+		$this -> db -> from('pessoa');
+		$query = $this -> db -> get();
+
+		if($query -> num_rows() > 0){
+		    return $query->result_array();
+		}
+		else{
+		    return false;
 		}	
 
 	}
