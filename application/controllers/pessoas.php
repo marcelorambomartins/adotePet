@@ -125,6 +125,7 @@ class Pessoas extends CI_Controller {
 				$_SESSION['nomepessoa']=$dadospessoa['nome'];
 				$_SESSION['email']=$dadospessoa['email'];
 				$_SESSION['usertype']=$dadospessoa['userType'];
+				$_SESSION['listaCaesAdotar']=$dadospessoa['listaCaesAdotar'];
 				redirect('http://localhost/viralate/caes/listar');
 			else:
 				$dados['loginfail'] = true;

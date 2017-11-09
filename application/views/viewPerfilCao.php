@@ -3,35 +3,25 @@
 		<?php
 		$this->load->view('head');
 		?>
-
-    <script type="text/javascript">
-      
-      function adotar(logado){
-
-        if(logado){
-          $(btnAdotar).attr("disabled","disabled");
-          $(alertAdotar).show();
-        }else{
-          $(alertLogar).show();
-        }
-        
-      }
-
-    </script>
 	</head>
 	<body>
 		<?php
 			$this->load->view('menu');
 		?>
 	<div class="container">
-
-  <div id="alertAdotar" class="alert alert-success text-center" style="display:none">
-    <p>Sua solicitação foi enviada para os administradores da ONG. Em breve eles entraram em contato com você!</p>
-  </div>
-
-   <div id="alertLogar" class="alert alert-danger text-center" style="display:none">
-    <p>Você deve estar logado para continuar!</p>
-  </div>
+  <?php
+    if(isset($_SESSION['logado'])) {
+       foreach ($dadosCao as $cao){
+            if($_SESSION['listaCaesAdotar'] != null){
+              if(in_array($cao['id'], $_SESSION['listaCaesAdotar'])){
+                echo '<div class="alert alert-success text-center">';
+                echo '<p>Sua solicitação foi enviada para os administradores da ONG. Em breve eles entraram em contato com você!</p></div>';
+              }
+            }
+        }
+    }
+    
+  ?>
 
 		<div class="container-fluid text-center">    
   <div class="row content">
@@ -58,9 +48,23 @@
           }
           if($cao['adotado']){
              echo '<a class="list-group-item"><i class="fa fa-heart fa-fw" aria-hidden="true"></i>&nbsp;Adotado</a>';
-          }else{
 
-            echo '<br><button id="btnAdotar" class="btn btn-success" href="#" style="width:100%" onclick="adotar(' . isset($_SESSION['logado']) . ')"><i class="fa fa-heart fa-fw"></i> Adotar</button>';
+          }else{
+            if($_SESSION['listaCaesAdotar'] != null)
+            {
+                  if(in_array($cao['id'], $_SESSION['listaCaesAdotar'])){
+
+                      $caminho ='http://localhost/viralate/adocoes/cadastrar/' . $_SESSION['idpessoa'] . '/'. $cao['id'];
+                    echo '<br><a  id="btnAdotar" href="' . $caminho . '"><button disabled="disabled" class="btn btn-success" style="width:100%"><i class="fa fa-heart fa-fw"></i> Adotar</button></a>';
+                  }else{
+                    $caminho ='http://localhost/viralate/adocoes/cadastrar/' . $_SESSION['idpessoa'] . '/'. $cao['id'];
+                    echo '<br><a  id="btnAdotar" href="' . $caminho . '"><button class="btn btn-success" style="width:100%"><i class="fa fa-heart fa-fw"></i> Adotar</button></a>';
+                  }
+            }else{
+                      $caminho ='http://localhost/viralate/adocoes/cadastrar/' . $_SESSION['idpessoa'] . '/'. $cao['id'];
+                    echo '<br><a  id="btnAdotar" href="' . $caminho . '"><button class="btn btn-success" style="width:100%"><i class="fa fa-heart fa-fw"></i> Adotar</button></a>';
+            }
+              
           }
 
           if(isset($_SESSION['logado'])) {

@@ -47,9 +47,23 @@ class ModelPessoas extends CI_Model
 		}else{
 			return TRUE;
 		}
-	}	
+	}
 
-	
-	
+
+	public function selectPessoa($pessoaID){
+		$this -> db -> select('*');
+		$this -> db -> from('pessoa');
+		$this -> db -> where('id', $pessoaID);
+		$query = $this -> db -> get();
+
+		if($query -> num_rows() > 0){
+		    return $query->row_array();
+		}
+		else{
+		    return false;
+		}	
+
+	}
+
 }
 ?>
