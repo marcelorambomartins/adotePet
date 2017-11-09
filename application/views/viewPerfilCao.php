@@ -15,7 +15,7 @@
             if($_SESSION['listaCaesAdotar'] != null){
               if(in_array($cao['id'], $_SESSION['listaCaesAdotar'])){
                 echo '<div class="alert alert-success text-center">';
-                echo '<p>Sua solicitação foi enviada para os administradores da ONG. Em breve eles entraram em contato com você!</p></div>';
+                echo '<p>Sua solicitação foi enviada para os administradores da ONG. Em breve eles entrarão em contato com você!</p></div>';
               }
             }
         }
@@ -82,6 +82,7 @@
 		  
 		  	
 			}
+      echo '<br>';//Pra não deslocar a coluna da edição pra esquerda.
 		?>
 		</div>
     </div>
@@ -203,9 +204,37 @@
           }
         }else{
           foreach ($dadosCao as $cao){
+            if($cao['idade']==1){
+              $anos = "ano";
+            }elseif($cao['idade']==0){
+              $anos = "anos";
+            }elseif($cao['idade']>1){
+              $anos = "anos";
+            }
+
             echo '<h1>' . $cao['nome'] . '</h1><hr>';
-            echo '<p>' . $cao['descricao'] . '</p>';
-            echo "<hr><h3>Mais Fotos</h3><p>fotos...</p>";
+            echo '<h4>Raça: ' . $cao['raca'] . '</h4>';
+            echo '<h4>Idade: ' . $cao['idade'] . ' '.$anos.' </h4>';
+            echo '<h4>Sexo: ' . $cao['sexo'] . '</h4>';
+            echo '<h4>Porte: ' . $cao['porte'] . '</h4>';
+            echo '<br>';
+            if($cao['castrado']){
+              echo '<h4>Está castrado</h4>';              
+            }else{
+              echo '<h4>Não está castrado</h4>';                            
+            }
+            if($cao['vacinado']){
+              echo '<h4>Está vacinado</h4>';              
+            }else{
+              echo '<h4>Não está vacinado</h4>';                            
+            } 
+            if($cao['adotado']){
+              echo '<h4>Já foi adotado</h4>';              
+            }else{
+              echo '<h4>Ainda não foi adotado</h4>';                            
+            }                       
+            echo '<br>';            
+            echo '<h4>Descrição: ' . $cao['descricao'] . '</h4>';
           }
         }
       ?>

@@ -165,66 +165,100 @@ class Caes extends CI_Controller {
 			$dados['status']=NULL;
 		else:
 			$dados['status']=NULL;
-			$type = $_FILES['imagem']['type'];
-			$tipo = $type;
-			$tipo = str_replace("image/","",$tipo);
-			if($tipo == 'jpeg'){
-				$tipo = 'jpg';
-			}
+			if($_FILES['imagem']['type']){
+				$type = $_FILES['imagem']['type'];
+				$tipo = $type;
+				$tipo = str_replace("image/","",$tipo);
+				if($tipo == 'jpeg'){
+					$tipo = 'jpg';
+				}
 
-			$tempo = time();
-			$name = $tempo.'.'.$tipo;
-			$configuracao = array(
-				'upload_path'   => './images/dogs/' . $id,
-				'allowed_types' => 'jpg|png',
-				'file_name'     => $tempo,
-				'max_size'      => '5000'
-			);
-            $this->load->library('upload');	
-            $this->upload->initialize($configuracao);		
-
-            if ( ! $this->upload->do_upload('imagem'))
-            {
-				 $dados['formerror'] = 'Erro no upload da imagem';
-            }
-            else
-            {
-            	$data = array('upload_data' => $this->upload->data());
-				$dados['formerror']=NULL;
-				$dados['status']=NULL;
-				
-				if($this->input->post('castrado') == null){
-						$castrado = false;
-				}else{
-						$castrado = true;
-				}
-				if($this->input->post('vacinado') == null){
-						$vacinado = false;
-				}else{
-						$vacinado = true;
-				}
-				if($this->input->post('adotado') == null){
-						$adotado = false;
-				}else{
-						$adotado = true;
-				}
-				$cao = array(
-					'nome' => $this->input->post('nome'),
-					'idade' => $this->input->post('idade'),
-					'porte' => $this->input->post('porte'),
-					'raca' => $this->input->post('raca'),
-					'sexo' => $this->input->post('sexo'),
-					'castrado' => $castrado,
-					'vacinado' => $vacinado,
-					'adotado' => $adotado,
-					'imagem' => $name,
-					'descricao' => $this->input->post('descricao')
+				$tempo = time();
+				$name = $tempo.'.'.$tipo;
+				$configuracao = array(
+					'upload_path'   => './images/dogs/' . $id,
+					'allowed_types' => 'jpg|png',
+					'file_name'     => $tempo,
+					'max_size'      => '5000'
 				);
-				$this->load->model('ModelCaes','caes');
-				$dados['status'] = $this->caes->updateCao($id, $cao);
-				$arquivo = './images/dogs/'.$id.'/'.$imagem;
-				unlink($arquivo);
-			}		
+		        $this->load->library('upload');	
+		        $this->upload->initialize($configuracao);		
+
+		        if ( ! $this->upload->do_upload('imagem'))
+		        {
+					 $dados['formerror'] = 'Erro no upload da imagem';
+		        }
+		        else
+		        {
+		        	$data = array('upload_data' => $this->upload->data());
+					$dados['formerror']=NULL;
+					$dados['status']=NULL;
+					
+					if($this->input->post('castrado') == null){
+							$castrado = false;
+					}else{
+							$castrado = true;
+					}
+					if($this->input->post('vacinado') == null){
+							$vacinado = false;
+					}else{
+							$vacinado = true;
+					}
+					if($this->input->post('adotado') == null){
+							$adotado = false;
+					}else{
+							$adotado = true;
+					}
+					$cao = array(
+						'nome' => $this->input->post('nome'),
+						'idade' => $this->input->post('idade'),
+						'porte' => $this->input->post('porte'),
+						'raca' => $this->input->post('raca'),
+						'sexo' => $this->input->post('sexo'),
+						'castrado' => $castrado,
+						'vacinado' => $vacinado,
+						'adotado' => $adotado,
+						'imagem' => $name,
+						'descricao' => $this->input->post('descricao')
+					);
+					$this->load->model('ModelCaes','caes');
+					$dados['status'] = $this->caes->updateCao($id, $cao);
+					$arquivo = './images/dogs/'.$id.'/'.$imagem;
+					unlink($arquivo);
+				}
+			}else{
+					$dados['formerror']=NULL;
+					$dados['status']=NULL;
+					
+					if($this->input->post('castrado') == null){
+							$castrado = false;
+					}else{
+							$castrado = true;
+					}
+					if($this->input->post('vacinado') == null){
+							$vacinado = false;
+					}else{
+							$vacinado = true;
+					}
+					if($this->input->post('adotado') == null){
+							$adotado = false;
+					}else{
+							$adotado = true;
+					}
+					$cao = array(
+						'nome' => $this->input->post('nome'),
+						'idade' => $this->input->post('idade'),
+						'porte' => $this->input->post('porte'),
+						'raca' => $this->input->post('raca'),
+						'sexo' => $this->input->post('sexo'),
+						'castrado' => $castrado,
+						'vacinado' => $vacinado,
+						'adotado' => $adotado,
+						'descricao' => $this->input->post('descricao')
+					);
+					$this->load->model('ModelCaes','caes');
+					$dados['status'] = $this->caes->updateCao($id, $cao);
+				}
 		endif;
 		redirect('http://localhost/viralate/caes/visualizar/'.$id.'/0');
 	}

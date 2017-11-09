@@ -10,6 +10,15 @@ class Adocoes extends CI_Controller {
 	}
 
 
+	public function listar()
+	{
+		$this->load->model('ModelAdocoes','adocoes');
+		$dados['listacaes'] = $this->adocoes->selectCaes();
+		$this->load->view('viewListagemAdocoes',$dados);
+	}
+
+
+
 	public function cadastrar($pessoaID,$caoID)
 	{
 		if(!$_SESSION['logado']){redirect('http://localhost/viralate/pessoas/login');}
@@ -41,7 +50,7 @@ class Adocoes extends CI_Controller {
 	
 		$dados['status'] = $this->adocoes->insertAdocao($adocao);
 
-		redirect('http://localhost/viralate/caes/visualizar/' . $caoID);
+		redirect('http://localhost/viralate/caes/visualizar/' . $caoID.'/0');
 	}
 
 

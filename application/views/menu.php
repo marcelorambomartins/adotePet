@@ -30,10 +30,10 @@
 				echo'<li><a href="http://localhost/viralate/pessoas/alterar"><span class="glyphicon glyphicon-list-alt"></span> Editar Cadastro</a></li>';
 					if($_SESSION['usertype'] == 1){
 						echo'<li><a href="#"><span class="glyphicon glyphicon-list-alt"></span> Gerenciar Usuários</a></li>';
-						echo'<li><a href="#"><span class="glyphicon glyphicon-list-alt"></span> Gerenciar Adoções</a></li>';
+						echo'<li><a href="http://localhost/viralate/adocoes/listar"><span class="glyphicon glyphicon-list-alt"></span> Gerenciar Adoções</a></li>';
 					}
 					if($_SESSION['usertype'] == 2){
-						echo'<li><a href="#"><span class="glyphicon glyphicon-list-alt"></span> Gerenciar Adoções</a></li>';
+						echo'<li><a href="http://localhost/viralate/adocoes/listar"><span class="glyphicon glyphicon-list-alt"></span> Gerenciar Adoções</a></li>';
 					}
 
 				echo'</ul></div>';
