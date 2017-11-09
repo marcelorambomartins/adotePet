@@ -12,6 +12,8 @@ class Adocoes extends CI_Controller {
 
 	public function listar()
 	{
+		if(!$_SESSION['logado']){redirect('http://localhost/viralate/pessoas/login');}
+		
 		$this->load->model('ModelAdocoes','adocoes');
 		$dados['listacaes'] = $this->adocoes->selectCaes();
 		$this->load->view('viewListagemAdocoes',$dados);

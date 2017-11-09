@@ -12,7 +12,7 @@
 			<div class="row">
 				<div class="col-lg-12">	
 					<section id="sliderhome">
-						<div id="meuSlider" class="carousel slide" data-ride="carousel">
+						<div id="meuSlider" class="carousel slide" data-ride="carousel" style="width: 50%; height:50%; margin: 0 auto">
 							<ol class="carousel-indicators">
 								<li data-target="#meuSlider" data-slide-to="0" class="active"></li>
 								<li data-target="#meuSlider" data-slide-to="1"></li>

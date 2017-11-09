@@ -28,13 +28,15 @@
 
 
 			<?php
+			var_dump($listacaes);
 				foreach ($listacaes as $cao) {
 					echo "<div class='col-sm-3'><!--inicio do bloco-->";
 					echo "<div class='panel panel-default'>";
 					echo "<div class='panel-body'>";
 					$visualizar = 0;
 						echo "<a href='http://localhost/viralate/caes/visualizar/" . $cao['id'] . "/".$visualizar."'><img src='http://localhost/viralate/images/dogs/" . $cao['id'] . "/". $cao['imagem']."' height='100%' width='100%'></a>";
-						echo "<h4>" . $cao['nome'] . "</h4>";
+						echo "<h4>" . $cao['nomecao'] . "</h4>";
+						echo "<h4>" . $cao['nomepessoa'] . "</h4>";
 					echo "</div>";
 					echo "</div></div><!--fim do bloco-->";
 				}
