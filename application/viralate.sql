@@ -9,6 +9,7 @@ email VARCHAR(50) NOT NULL,
 senha VARCHAR(50) NOT NULL,
 userType INTEGER NOT NULL, # 1 = ADM,  2 = Moderador,  3 = User comum
 imagem VARCHAR(100) NOT NULL,
+listaCaesAdotar VARCHAR(100),
 dataCadastro DATE NOT NULL);
 
 CREATE TABLE cao(
@@ -28,7 +29,7 @@ dataCadastro DATE NOT NULL);
 CREATE TABLE adocao(
 id INTEGER AUTO_INCREMENT PRIMARY KEY,
 dataCadastro DATE NOT NULL,
-status INTEGER NOT NULL, #Pendente, Aprovado, Recusado
+status VARCHAR(10) NOT NULL, #Pendente, Aprovado, Recusado
 observacao VARCHAR(100),
 pessoaID INTEGER NOT NULL,
 caoID INTEGER NOT NULL,
