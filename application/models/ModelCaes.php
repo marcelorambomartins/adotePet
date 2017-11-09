@@ -10,6 +10,13 @@ class ModelCaes extends CI_Model
 		
 	}
 
+	public function updateCao($id, $cao)
+	{
+		$this->db->where('id', $id);
+		$this->db->update('cao', $cao);
+		return $this->db->affected_rows(); //retorna quantas linhas foram afetadas
+		
+	}
 
 	public function selectCaes()
 	{

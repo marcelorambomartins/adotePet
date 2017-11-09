@@ -8,7 +8,6 @@
 		<?php
 			$this->load->view('menu');
 		?>
-<<<<<<< HEAD
 	<div class="container">
 		<div id='alert' class="row text-center"><!--Div dos Alert-->
 			<?php
