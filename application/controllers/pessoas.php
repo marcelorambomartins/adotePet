@@ -138,5 +138,14 @@ class Pessoas extends CI_Controller {
 
 	}
 
+
+	public function gerenciar(){
+
+		$this->load->model('ModelPessoas','pessoas');
+		$dados['listaPessoas'] = $this->pessoas->selectAllPessoas();	
+
+		$this->load->view('viewGerenciarUsuarios',$dados);
+	}
+
 }
 ?>
