@@ -68,6 +68,7 @@ class ModelPessoas extends CI_Model
 	public function selectAllPessoas(){
 		$this -> db -> select('*');
 		$this -> db -> from('pessoa');
+		$this -> db -> where('id NOT IN (1)');
 		$query = $this -> db -> get();
 
 		if($query -> num_rows() > 0){

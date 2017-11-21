@@ -10,30 +10,38 @@
 		?>
 	<div class="container">
 
-      <table class="table">
+		<?php
+			if($listaPessoas == null){
+				echo '<div class="alert alert-info text-center">';
+				echo 'Sem Resultados';
+				echo '</div>';
+			}else{
+				echo '<table class="table">';
+				echo '<tr>';
+				echo '<th>Nome</th>';
+    			echo '<th>Telefone</th>';
+    			echo '<th>Email</th>';
+    			echo '<th>Data Cadastro</th>';
+    			echo '<th></th><th></th><th></th>';
+  				echo '</tr>';
 
-      		<tr>
-    			<th>Nome</th>
-    			<th>Telefone</th>
-    			<th>Email</th>
-    			<th>Tipo Usuario</th>
-    			<th>Data Cadastro</th>
-  			</tr>
-      <?php
 
-      	foreach($listaPessoas as $pessoa) {
-						echo "<tr>";
-						echo "<td>" . $pessoa['nome'] . "</td>";
-						echo "<td>" . $pessoa['telefone'] . "</td>";
-						echo "<td>" . $pessoa['email'] . "</td>";
-						echo "<td>" . $pessoa['userType'] . "</td>";
-						echo "<td>" . $pessoa['dataCadastro'] . "</td>";
-						//echo "<td><input type='button' value='verTrabalho' class='btn btn-success' onclick='acao(this.value," . $item['trabalhoID'] .")'/></td>";
-						//echo "<td><input type='button' value='editarTrabalho' class='btn btn-info' onclick='acao(this.value," . $item['trabalhoID'] .")'/></td>";
-						//echo "<td><input type='button' value='excluirTrabalho' class='btn btn-danger' onclick='acao(this.value," . $item['trabalhoID'] .")'/></td>";
-						echo "</tr>";
-		}
-
+  				foreach($listaPessoas as $pessoa) {
+					echo "<tr>";
+					echo "<td>" . $pessoa['nome'] . "</td>";
+					echo "<td>" . $pessoa['telefone'] . "</td>";
+					echo "<td>" . $pessoa['email'] . "</td>";
+					//echo "<td>" . $pessoa['userType'] . "</td>";
+					echo "<td>" . $pessoa['dataCadastro'] . "</td>";
+					$caminhoAlterarPapel ='http://localhost/viralate/pessoas/alterarPapel/' . $pessoa['id'];
+		            echo '<td><a  id="btnAdotar" href="' . $caminhoAlterarPapel . '"><button class="btn btn-success" style="width:100%"><i class="fa fa-pencil fa-fw"></i> Tornar Moderador</button></a></td>';
+		            $caminhoBloquear ='http://localhost/viralate/pessoas/bloquear/' . $pessoa['id'];
+		            echo '<td><a  id="btnAdotar" href="' . $caminhoBloquear . '"><button class="btn btn-warning" style="width:100%"><i class="fa fa-ban fa-fw"></i> Bloquear</button></a></td>';
+		            $caminhoDeletar ='http://localhost/viralate/pessoas/deletar/' . $pessoa['id'];
+		            echo '<td><a  id="btnAdotar" href="' . $caminhoDeletar . '"><button class="btn btn-danger" style="width:100%"><i class="fa fa-trash fa-fw"></i> Deletar</button></a></td>';
+					echo "</tr>";
+				}
+			}
 		?>
 
       </table>

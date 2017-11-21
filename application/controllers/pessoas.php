@@ -34,6 +34,7 @@ class Pessoas extends CI_Controller {
 				'senha' => $this->input->post('password'),
 				'userType' => 3,
 				'imagem' => 'imagem',
+				'bloqueado' => false,
 				'dataCadastro' => date ("Y-m-d")
 			);
 
@@ -147,6 +148,18 @@ class Pessoas extends CI_Controller {
 		$dados['listaPessoas'] = $this->pessoas->selectAllPessoas();	
 
 		$this->load->view('viewGerenciarUsuarios',$dados);
+	}
+
+	public function alterarPapel($pessoaID){
+		echo $pessoaID;
+	}
+
+	public function bloquear($pessoaID){
+		echo $pessoaID;
+	}
+
+	public function deletar($pessoaID){
+		echo $pessoaID;
 	}
 
 }

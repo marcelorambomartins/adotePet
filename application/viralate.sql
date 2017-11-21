@@ -11,6 +11,7 @@ senha VARCHAR(50) NOT NULL,
 userType INTEGER NOT NULL, # 1 = ADM,  2 = Moderador,  3 = User comum
 imagem VARCHAR(100) NOT NULL,
 listaCaesAdotar VARCHAR(100),
+bloqueado BOOLEAN NOT NULL,
 dataCadastro DATE NOT NULL);
 
 CREATE TABLE cao(
@@ -38,8 +39,8 @@ FOREIGN KEY (pessoaID) REFERENCES pessoa(id),
 FOREIGN KEY (caoID) REFERENCES cao(id));
 
 
-INSERT INTO pessoa(nome,sexo,telefone,email,senha,userType,imagem,dataCadastro)
-	VALUES ('adm','M', '00000000000','adm@adm.com','123456',1,'imagem','2017-06-13');
+INSERT INTO pessoa(nome,sexo,telefone,email,senha,userType,imagem, bloqueado,dataCadastro)
+	VALUES ('adm','M', '00000000000','adm@adm.com','123456',1,'imagem', false,'2017-06-13');
 
 
 SELECT * FROM pessoa;
