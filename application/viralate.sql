@@ -5,6 +5,7 @@ CREATE TABLE pessoa(
 id INTEGER AUTO_INCREMENT PRIMARY KEY,
 nome VARCHAR(50) NOT NULL,
 sexo CHAR NOT NULL, # M,F
+telefone VARCHAR(11) NOT NULL,
 email VARCHAR(50) NOT NULL,
 senha VARCHAR(50) NOT NULL,
 userType INTEGER NOT NULL, # 1 = ADM,  2 = Moderador,  3 = User comum
@@ -37,8 +38,8 @@ FOREIGN KEY (pessoaID) REFERENCES pessoa(id),
 FOREIGN KEY (caoID) REFERENCES cao(id));
 
 
-INSERT INTO pessoa(nome,sexo,email,senha,userType,imagem,dataCadastro)
-	VALUES ('adm','M','adm@adm.com','123456',1,'imagem','2017-06-13');
+INSERT INTO pessoa(nome,sexo,telefone,email,senha,userType,imagem,dataCadastro)
+	VALUES ('adm','M', '00000000000','adm@adm.com','123456',1,'imagem','2017-06-13');
 
 
 SELECT * FROM pessoa;

@@ -16,6 +16,7 @@ class Pessoas extends CI_Controller {
 		$this->load->library(array('form_validation','email'));
 		//validação do formulário
 		$this->form_validation->set_rules('nome','Nome','trim|required');
+		$this->form_validation->set_rules('telefone','Telefone','required|max_length[11]|min_length[11]');
 		$this->form_validation->set_rules('email','Email','trim|required|valid_email');
 		$this->form_validation->set_rules('password','Senha','trim|required');
 
@@ -28,6 +29,7 @@ class Pessoas extends CI_Controller {
 			$pessoa = array(
 				'nome' => $this->input->post('nome'),
 				'sexo' => 'X',
+				'telefone' => $this->input->post('telefone'),
 				'email' => $this->input->post('email'),
 				'senha' => $this->input->post('password'),
 				'userType' => 3,

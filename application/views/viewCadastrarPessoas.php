@@ -23,6 +23,14 @@
 				echo form_input($inputNome);
 				echo '<br>';
 
+				echo form_label('Telefone','telefone');
+				$inputTelefone = array(
+					'name' => 'telefone',
+					'class' =>'form-control',
+				);
+				echo form_input($inputTelefone);
+				echo '<br>';
+
 				echo form_label('Email','email');
 				$inputEmail = array(
 					'name' => 'email',

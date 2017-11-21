@@ -14,6 +14,7 @@
 
       		<tr>
     			<th>Nome</th>
+    			<th>Telefone</th>
     			<th>Email</th>
     			<th>Tipo Usuario</th>
     			<th>Data Cadastro</th>
@@ -23,6 +24,7 @@
       	foreach($listaPessoas as $pessoa) {
 						echo "<tr>";
 						echo "<td>" . $pessoa['nome'] . "</td>";
+						echo "<td>" . $pessoa['telefone'] . "</td>";
 						echo "<td>" . $pessoa['email'] . "</td>";
 						echo "<td>" . $pessoa['userType'] . "</td>";
 						echo "<td>" . $pessoa['dataCadastro'] . "</td>";
