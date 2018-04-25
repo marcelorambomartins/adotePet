@@ -69,8 +69,7 @@
 
           if(isset($_SESSION['logado'])) {
             if($_SESSION['usertype'] == 1 or $_SESSION['usertype'] == 2){
-              $editar = 1;
-              echo '<br><br><a href="http://localhost/viralate/caes/visualizar/'.$cao['id'].'/'.$editar.'"<button class="btn btn-primary"  style="width:100%"><i class="fa fa-pencil fa-fw"></i> Editar</button></a>';
+              echo '<br><br><a href="http://localhost/viralate/caes/editar/'.$cao['id'].'"<button class="btn btn-primary"  style="width:100%"><i class="fa fa-pencil fa-fw"></i> Editar</button></a>';
             }
           }
 

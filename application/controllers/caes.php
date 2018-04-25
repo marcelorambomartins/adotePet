@@ -138,11 +138,20 @@ class Caes extends CI_Controller {
 		$this->load->model('ModelCaes','caes');
 		$dados['dadosCao'] = $this->caes->selectCao($id);
 		$this->load->view('viewPerfilCao',$dados);
+
+	}
+
+	public function editar($id){
+		if(!$_SESSION['idpessoa']){redirect('http://localhost/viralate/pessoas/login');}
+			
+			$this->load->model('ModelCaes','caes');
+			$dados['dadosCao'] = $this->caes->selectCao($id);
+			$this->load->view('viewAlterarCaes',$dados);
 	}
 
 
 
-	public function alterar($id, $imagem)
+	public function alterar($id)
 	{
 		if(!$_SESSION['idpessoa']){redirect('http://localhost/viralate/pessoas/login');}
 
@@ -257,7 +266,7 @@ class Caes extends CI_Controller {
 					$dados['status'] = $this->caes->updateCao($id, $cao);
 				}
 		endif;
-		redirect('http://localhost/viralate/caes/visualizar/'.$id.'/0');
+		redirect('http://localhost/viralate/caes/visualizar/'.$id);
 	}
 
 }
