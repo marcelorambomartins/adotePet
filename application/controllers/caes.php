@@ -131,19 +131,16 @@ class Caes extends CI_Controller {
 
 
 
-	public function visualizar($id, $alterar){
+	public function visualizar($id){
 
 		if(!$_SESSION['idpessoa']){redirect('http://localhost/viralate/pessoas/login');}
 		
 		$this->load->model('ModelCaes','caes');
 		$dados['dadosCao'] = $this->caes->selectCao($id);
-		if($alterar == TRUE){
-			$dados['alterar'] = TRUE;
-		}else{
-			$dados['alterar'] = FALSE;
-		}
 		$this->load->view('viewPerfilCao',$dados);
 	}
+
+
 
 	public function alterar($id, $imagem)
 	{

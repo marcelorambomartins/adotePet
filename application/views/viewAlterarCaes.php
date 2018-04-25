@@ -88,6 +88,121 @@
     </div>
     <div class="col-sm-9 text-left"> 
       <?php
+        if($alterar){
+          foreach ($dadosCao as $cao){
+            echo form_open_multipart('http://localhost/viralate/caes/alterar/'.$cao['id'].'/'.$cao['imagem']);
+            echo form_label('Nome','nome');
+            $inputNome = array(
+              'name' => 'nome',
+              'class' => 'form-control'
+            );
+            echo form_input($inputNome, $cao['nome']);
+            echo '<br>';
+
+            echo form_label('Raça','raca');
+            $inputRaca = array(
+                  'name' => 'raca',
+                  'class' => 'form-control'
+            );
+            echo form_input($inputRaca, $cao['raca']);
+            echo '<br>';
+
+            
+            echo form_label('Idade (anos)','idade');
+            $inputIdade = array(
+                  'name' => 'idade',
+                  'class' => 'form-control',
+                  'type' => 'number'
+            );
+            echo form_input($inputIdade, $cao['idade']);
+            echo '<br>';
+
+            $opcoesSexo = array(
+              '' => 'Selecione',
+                      'Fêmea'  => 'Fêmea',
+                      'Macho'   => 'Macho',
+                       );
+
+            echo form_label('Sexo','sexo');
+            echo '<br>';
+            echo form_dropdown('sexo', $opcoesSexo, $cao['sexo'],'class="form-control"');
+            echo '<br>';
+
+              $opcoesPorte = array(
+              ''         => 'Selecione',
+                      'Pequeno'  => 'Pequeno',
+                      'Médio'    => 'Médio',
+                      'Grande'   => 'Grande',
+                       );
+
+            echo form_label('Porte','porte');
+            echo '<br>';
+            echo form_dropdown('porte', $opcoesPorte, $cao['porte'],'class="form-control"');
+            echo "<br>";
+
+            $data = array(
+                  'name'        => 'descricao',
+                  'class'       => 'form-control',
+                  'value'       => $cao['descricao'],
+                  'rows'        => '5',
+                  'cols'        => '30',
+               );
+
+            echo form_label(' Escreva algo sobre ele','descricao');
+            echo '<br>';
+              echo form_textarea($data);    
+            echo '<br><br>';
+
+            
+            echo "</div>";
+            echo "<div class='col-sm-2'></div>";
+            echo "<div class='col-sm-4'>";
+            
+
+
+            echo form_label('Imagem','imagem');
+            echo '<input class="form-control-file" type="file" name="imagem" size="1000" accept="image/*"/>';
+            echo '<hr><br><br>';
+
+             echo '<h4 class="text-center">Caracteristicas</h4>';
+            $checkboxCastrado = array(
+                'name'        => 'castrado',
+                'value'       => TRUE,
+                'checked'     => $cao['castrado'],
+                'style'       => 'zoom:2',
+              );
+            echo form_checkbox($checkboxCastrado);
+            echo form_label(' Castrado','castrado');
+            echo "<br>";
+            
+
+            $checkboxVacinado = array(
+                'name'        => 'vacinado',
+                'value'       => TRUE,
+                'checked'     => $cao['vacinado'],
+                'style'       => 'zoom:2',
+              );
+            echo form_checkbox($checkboxVacinado);
+            echo form_label(' Vacinado','vacinado');
+            echo "<br>";
+
+
+            $checkboxAdotado = array(
+                'name'        => 'adotado',
+                'value'       => TRUE,
+                'checked'     => $cao['adotado'],
+                'style'       => 'zoom:2',
+              );
+            echo form_checkbox($checkboxAdotado);
+            echo form_label(' Adotado','adotado');
+            echo '<br><br>';
+                    
+
+            echo '<button class="btn btn-success" type="submit">Alterar</button>';
+            echo '<br>&nbsp';
+            echo form_close();
+          }
+        }else{
           foreach ($dadosCao as $cao){
             if($cao['idade']==1){
               $anos = "ano";
@@ -121,6 +236,7 @@
             echo '<br>';            
             echo '<h4>Descrição: ' . $cao['descricao'] . '</h4>';
           }
+        }
       ?>
     </div>
   </div>
