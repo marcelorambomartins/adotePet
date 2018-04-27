@@ -12,6 +12,7 @@ class ModelAdocoes extends CI_Model
 	
 	public function selectCaes()
 	{
+		$this-> db ->distinct('adocao.caoID');
 		$this -> db -> select('cao.id, cao.nome as nomecao, pessoa.nome as nomepessoa, cao.idade, cao.porte, cao.raca, cao.sexo, cao.imagem, cao.vacinado, cao.castrado, cao.adotado, cao.descricao, cao.dataCadastro');
 		$this -> db -> from('cao');
 		$this->db->join('adocao', 'cao.id = adocao.caoID');		

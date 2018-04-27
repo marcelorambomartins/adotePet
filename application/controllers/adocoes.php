@@ -28,7 +28,7 @@ class Adocoes extends CI_Controller {
 		$this->load->model('ModelPessoas', 'pessoa');
 		$dadosPessoa = $this->pessoa->selectPessoa($pessoaID);
 
-
+		/*
 		if($dadosPessoa['listaCaesAdotar'] != null){
 			$listaCaesAdotar = json_decode($dadosPessoa['listaCaesAdotar'],true);
 		}
@@ -38,13 +38,13 @@ class Adocoes extends CI_Controller {
 		$data = array('listaCaesAdotar'=>$listaAtualizada);
 		$status = $this->pessoa->alteraPessoa($pessoaID, $data);
 		$_SESSION['listaCaesAdotar']=$listaCaesAdotar;
-
+		*/
 
 
 		$adocao = array(
 				'pessoaID' 		=> $pessoaID,
 				'caoID' 		=> $caoID,
-				'status' 		=> 'Pendente',
+				'status' 		=> 'Aguardando',
 				'dataCadastro' 	=> date ("Y-m-d")
 			);
 
@@ -52,7 +52,7 @@ class Adocoes extends CI_Controller {
 	
 		$dados['status'] = $this->adocoes->insertAdocao($adocao);
 
-		redirect('http://localhost/viralate/caes/visualizar/' . $caoID.'/0');
+		redirect('http://localhost/viralate/caes/visualizar/' . $caoID);
 	}
 
 
