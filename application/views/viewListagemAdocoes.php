@@ -3,6 +3,13 @@
 		<?php
 		$this->load->view('head');
 		?>
+
+		<script>
+		function concluir() {
+			alert("função ainda não implementada");
+		}
+		</script>
+		
 	</head>
 	<body>
 		<?php
@@ -33,8 +40,11 @@
 					echo "<div class='panel panel-default'>";
 					echo "<div class='panel-body'>";
 						echo "<a href=''><img src='http://localhost/viralate/images/dogs/" . $cao['id'] . "/". $cao['imagem']."' height='100%' width='100%'></a>";
-						echo "<h4>" . $cao['nomecao'] . "</h4>";
+						echo "<h4>Nome: " . $cao['nomecao'] . "</h4>";
+						echo "<h4>Solicitante: " . $cao['nomepessoa'] . "</h4>";
 					echo "</div>";
+					echo "<div class='panel-footer text-center' onclick='concluir()'>";
+					echo "<h5>Concluir</h5></div>";
 					echo "</div></div><!--fim do bloco-->";
 				}
 			?>
