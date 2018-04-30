@@ -3,6 +3,13 @@
 		<?php
 		$this->load->view('head');
 		?>
+
+		<script>
+		function concluir() {
+			alert("função ainda não implementada");
+		}
+		</script>
+
 	</head>
 	<body>
 		<?php
@@ -34,11 +41,11 @@
 					//echo "<td>" . $pessoa['userType'] . "</td>";
 					echo "<td>" . $pessoa['dataCadastro'] . "</td>";
 					$caminhoAlterarPapel ='http://localhost/viralate/pessoas/alterarPapel/' . $pessoa['id'];
-		            echo '<td><a  id="btnAdotar" href="' . $caminhoAlterarPapel . '"><button class="btn btn-success" style="width:100%"><i class="fa fa-pencil fa-fw"></i> Tornar Moderador</button></a></td>';
+		            echo '<td onclick="concluir()"><a  id="btnAdotar" href="#"><button class="btn btn-success" style="width:100%"><i class="fa fa-pencil fa-fw"></i> Tornar Moderador</button></a></td>';
 		            $caminhoBloquear ='http://localhost/viralate/pessoas/bloquear/' . $pessoa['id'];
-		            echo '<td><a  id="btnAdotar" href="' . $caminhoBloquear . '"><button class="btn btn-warning" style="width:100%"><i class="fa fa-ban fa-fw"></i> Bloquear</button></a></td>';
+		            echo '<td onclick="concluir()"><a  id="btnAdotar" href="#"><button class="btn btn-warning" style="width:100%"><i class="fa fa-ban fa-fw"></i> Bloquear</button></a></td>';
 		            $caminhoDeletar ='http://localhost/viralate/pessoas/deletar/' . $pessoa['id'];
-		            echo '<td><a  id="btnAdotar" href="' . $caminhoDeletar . '"><button class="btn btn-danger" style="width:100%"><i class="fa fa-trash fa-fw"></i> Deletar</button></a></td>';
+		            echo '<td onclick="concluir()"><a  id="btnAdotar" href="#"><button class="btn btn-danger" style="width:100%"><i class="fa fa-trash fa-fw"></i> Deletar</button></a></td>';
 					echo "</tr>";
 				}
 			}

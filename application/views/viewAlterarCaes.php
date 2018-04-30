@@ -3,6 +3,12 @@
 		<?php
 		$this->load->view('head');
 		?>
+    <script>
+		function concluir() {
+			alert("função ainda não implementada");
+		}
+		</script>
+
 	</head>
 	<body>
 		<?php
@@ -49,7 +55,7 @@
           
            if(isset($_SESSION['logado'])) {
               if($_SESSION['usertype'] == 1){
-                echo '<br><br><button class="btn btn-danger" href="#" style="width:100%"><i class="fa fa-trash fa-fw"></i> Excluir</button>';
+                echo '<br><br><button onclick="concluir()" class="btn btn-danger" href="#" style="width:100%"><i class="fa fa-trash fa-fw"></i> Excluir</button>';
               }
           }
 			}
